@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Calcula a potência de microgeração solar compatível com o consumo conforme o art. 73-A da REN ANEEL nº 1.000/2021 e gera o memorial de cálculo em PDF para a distribuidora.">
+<link rel="icon" href="data:image/jpeg;base64,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" type="image/jpeg">
+<title>Calculadora Art. 73-A 2.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Base que o claude.ai aplica automaticamente; aqui precisa vir explícita */
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); -webkit-text-size-adjust: 100%; }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<style>
+/* Layout: cálculo e dados do relatório à esquerda, resultado e botão do PDF fixos à direita; memória e base normativa abaixo. O gradiente do logo aparece só no painel de resultado. */
+:root {
+  --bg: #f2f4f7;
+  --surface: #ffffff;
+  --ink: #18202c;
+  --muted: #5a6474;
+  --line: #d9dee6;
+  --sun: #d56a1c;
+  --sky: #1a50a8;
+  --sun-ink: #b4520c;
+  --sky-ink: #1a4a99;
+  --tint: #eef2f9;
+  --ok: #1d7a4c;
+  --ok-bg: #e5f4ec;
+  --warn: #9a5a00;
+  --warn-bg: #fdf1df;
+  --grad-a: #c45f16;
+  --grad-b: #1a4c9e;
+  --on-grad: #ffffff;
+  --focus: #1a50a8;
+  --f-display: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d121b; --surface: #151c28; --ink: #e8ecf3; --muted: #9aa5b8; --line: #2a3446;
+    --sun: #f08a3c; --sky: #5b8ee6; --sun-ink: #f4a161; --sky-ink: #8db2f0; --tint: #1a2333;
+    --ok: #5fd39a; --ok-bg: #12301f; --warn: #f2b45a; --warn-bg: #33250f;
+    --grad-a: #b9581a; --grad-b: #1d4c98; --on-grad: #ffffff; --focus: #8db2f0;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d121b; --surface: #151c28; --ink: #e8ecf3; --muted: #9aa5b8; --line: #2a3446;
+  --sun: #f08a3c; --sky: #5b8ee6; --sun-ink: #f4a161; --sky-ink: #8db2f0; --tint: #1a2333;
+  --ok: #5fd39a; --ok-bg: #12301f; --warn: #f2b45a; --warn-bg: #33250f;
+  --grad-a: #b9581a; --grad-b: #1d4c98; --on-grad: #ffffff; --focus: #8db2f0;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.55;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 48px;
+}
+.wrap { max-width: 1080px; margin: 0 auto; display: grid; gap: 28px; }
+
+/* Cabeçalho */
+header.top { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+header.top img { width: 56px; height: 56px; border-radius: 14px; flex: none; display: block; }
+.top-text { min-width: 0; flex: 1 1 260px; }
+.eyebrow {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); margin: 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center;
+}
+.ver { color: var(--sun-ink); border: 1px solid color-mix(in srgb, var(--sun) 45%, transparent); border-radius: 999px; padding: 1px 8px; letter-spacing: .04em; }
+h1 {
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(28px, 4.2vw, 38px);
+  line-height: 1.05; margin: 2px 0 0; text-wrap: balance; letter-spacing: -.005em;
+}
+.lede { margin: 0; color: var(--muted); max-width: 70ch; }
+
+/* Grade principal */
+.main {
+  display: grid; gap: 20px; align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  grid-template-areas: "calc result" "dados result";
+}
+.area-calc { grid-area: calc; }
+.area-dados { grid-area: dados; }
+.result { grid-area: result; }
+@media (max-width: 860px) {
+  .main { grid-template-columns: minmax(0, 1fr); grid-template-areas: "calc" "result" "dados"; }
+}
+
+.panel {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+  padding: 22px; display: grid; gap: 22px; min-width: 0;
+}
+.panel-head { display: grid; gap: 2px; }
+.panel-head h2 { font-family: var(--f-display); font-weight: 700; font-size: 21px; margin: 0; }
+.panel-head p { margin: 0; color: var(--muted); font-size: 13.5px; }
+.field { display: grid; gap: 8px; min-width: 0; border: 0; padding: 0; margin: 0; }
+.label { font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.label small { font-weight: 400; color: var(--muted); font-size: 12.5px; }
+legend.label { padding: 0; margin-bottom: 8px; width: 100%; }
+
+/* Alternador de modo */
+.seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--tint); border: 1px solid var(--line); border-radius: 10px; padding: 3px; gap: 3px; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label {
+  text-align: center; padding: 8px 6px; border-radius: 7px; cursor: pointer; font-size: 13.5px; font-weight: 500;
+  color: var(--muted); transition: background .15s, color .15s; line-height: 1.25;
+}
+.seg input:checked + label { background: var(--surface); color: var(--ink); box-shadow: 0 1px 2px rgba(10, 20, 40, .12); }
+.seg input:focus-visible + label { outline: 2px solid var(--focus); outline-offset: 1px; }
+
+/* Campos numéricos */
+.num {
+  display: flex; align-items: stretch; border: 1.5px solid var(--line); border-radius: 10px; background: var(--surface);
+  overflow: hidden; transition: border-color .15s;
+}
+.num:focus-within { border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
+.num input {
+  flex: 1; min-width: 0; border: 0; background: transparent; color: var(--ink);
+  font-family: var(--f-display); font-size: 30px; font-weight: 600; padding: 8px 14px;
+  font-variant-numeric: tabular-nums; outline: none;
+}
+.num .unit {
+  display: grid; place-items: center; padding: 0 14px; background: var(--tint); color: var(--muted);
+  font-family: var(--f-mono); font-size: 13px; border-left: 1px solid var(--line); white-space: nowrap;
+}
+.num.small input { font-size: 20px; padding: 8px 12px; }
+.hint { font-size: 12.5px; color: var(--muted); margin: 0; }
+.hint b { color: var(--ink); font-weight: 600; }
+
+/* Mês a mês */
+.months-top { display: flex; gap: 12px; align-items: end; flex-wrap: wrap; }
+.months-top .field { flex: 0 1 220px; }
+.months { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+@media (max-width: 520px) { .months { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 380px) { .months { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.month { display: grid; gap: 3px; min-width: 0; }
+.month label { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.month input {
+  width: 100%; min-width: 0; border: 1.5px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink);
+  font-family: var(--f-display); font-size: 18px; font-weight: 600; padding: 5px 8px; font-variant-numeric: tabular-nums;
+}
+.month input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
+.months-sum { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-size: 13px; color: var(--muted); padding: 8px 12px; background: var(--tint); border-radius: 8px; }
+.months-sum b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* Entradas de texto do relatório */
+.txt { display: grid; gap: 5px; min-width: 0; }
+.txt label { font-size: 13px; font-weight: 600; }
+.txt label small { font-weight: 400; color: var(--muted); }
+.txt input {
+  width: 100%; min-width: 0; border: 1.5px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink);
+  font: 400 14.5px var(--f-body); padding: 8px 10px;
+}
+.txt input:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
+.txt input::placeholder { color: color-mix(in srgb, var(--muted) 70%, transparent); }
+input[type="month"] { font: 500 14.5px var(--f-body); }
+.grid2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.grid2 .wide { grid-column: 1 / -1; }
+@media (max-width: 520px) { .grid2 { grid-template-columns: minmax(0, 1fr); } }
+.group { display: grid; gap: 12px; min-width: 0; }
+.group-title { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0; }
+
+/* Classe de consumo */
+.classes { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.classes .cls { grid-column: span 2; position: relative; }
+.classes .cls:nth-child(n+4) { grid-column: span 3; }
+@media (max-width: 460px) {
+  .classes { grid-template-columns: minmax(0, 1fr); }
+  .classes .cls, .classes .cls:nth-child(n+4) { grid-column: auto; }
+}
+.cls input { position: absolute; opacity: 0; pointer-events: none; }
+.cls label {
+  display: grid; gap: 4px; height: 100%; padding: 12px; border: 1.5px solid var(--line); border-radius: 10px;
+  cursor: pointer; background: var(--surface); transition: border-color .15s, background .15s;
+}
+.cls label:hover { border-color: color-mix(in srgb, var(--sky) 45%, var(--line)); }
+.cls input:checked + label { border-color: var(--sky); background: var(--tint); }
+.cls input:focus-visible + label { outline: 2px solid var(--focus); outline-offset: 2px; }
+.cls .name { font-weight: 600; font-size: 14px; line-height: 1.25; }
+.cls .sub { font-size: 12px; color: var(--muted); line-height: 1.3; }
+.cls .fa { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 4px; }
+.cls .fa strong { font-family: var(--f-display); font-size: 22px; color: var(--ink); font-weight: 700; letter-spacing: .01em; }
+.cls input:checked + label .fa strong { color: var(--sky-ink); }
+
+.example-tag {
+  font-family: var(--f-mono); font-size: 11.5px; color: var(--sun-ink); background: color-mix(in srgb, var(--sun) 12%, transparent);
+  padding: 3px 8px; border-radius: 999px; justify-self: start; display: inline-flex; gap: 6px; align-items: center;
+}
+.example-tag button { font: inherit; color: inherit; background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+
+/* Resultado */
+.result { display: grid; gap: 14px; min-width: 0; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 16px); align-self: start; }
+@media (max-width: 860px) { .result { position: static; } }
+.hero {
+  border-radius: 14px; padding: 22px 22px 20px; color: var(--on-grad);
+  background: linear-gradient(118deg, var(--grad-a) 0%, color-mix(in srgb, var(--grad-a) 45%, var(--grad-b)) 52%, var(--grad-b) 100%);
+  display: grid; gap: 6px; position: relative; overflow: hidden;
+}
+.hero::after {
+  content: ""; position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,.16), rgba(255,255,255,0) 70%); pointer-events: none;
+}
+.hero .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; opacity: .9; margin: 0; }
+.hero .big { font-family: var(--f-display); font-weight: 700; font-size: clamp(64px, 11vw, 92px); line-height: .95; letter-spacing: -.01em; font-variant-numeric: tabular-nums; margin: 4px 0 0; }
+.hero .big span { font-size: .42em; font-weight: 600; margin-left: 6px; letter-spacing: 0; }
+.hero .raw { margin: 0; font-size: 14px; opacity: .95; }
+.hero .raw b { font-variant-numeric: tabular-nums; }
+
+.status { display: grid; gap: 8px; }
+.status:empty { display: none; }
+.chip { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 10px; font-size: 13.5px; line-height: 1.45; }
+.chip .dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 7px; flex: none; background: currentColor; }
+.chip.ok { background: var(--ok-bg); color: var(--ok); }
+.chip.warn { background: var(--warn-bg); color: var(--warn); }
+.chip p { margin: 0; color: var(--ink); }
+
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+.stat { padding: 12px 14px; display: grid; gap: 2px; min-width: 0; }
+.stat + .stat { border-left: 1px solid var(--line); }
+.stat .k { font-size: 12px; color: var(--muted); }
+.stat .v { font-family: var(--f-display); font-weight: 600; font-size: 24px; font-variant-numeric: tabular-nums; line-height: 1.15; }
+.stat .v small { font-family: var(--f-body); font-size: 12.5px; font-weight: 500; color: var(--muted); margin-left: 3px; }
+
+/* Cartão do relatório */
+.report-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 12px; }
+.report-card h2 { font-family: var(--f-display); font-size: 19px; font-weight: 700; margin: 0; }
+.report-card p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.report-parts { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.report-parts li { font-size: 12px; color: var(--ink); background: var(--tint); border-radius: 999px; padding: 3px 9px; }
+.btn-primary {
+  font: 600 15px var(--f-body); color: var(--on-grad); background: var(--sky); border: 0; border-radius: 10px;
+  padding: 12px 16px; cursor: pointer; display: inline-flex; justify-content: center; align-items: center; gap: 10px;
+  transition: filter .15s, transform .05s;
+}
+.btn-primary:hover { filter: brightness(1.08); }
+.btn-primary:active { transform: translateY(1px); }
+.btn-primary:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.btn-primary:disabled { opacity: .55; cursor: not-allowed; filter: none; }
+.btn-primary svg { width: 18px; height: 18px; flex: none; }
+.report-msg { font-size: 13px; margin: 0; padding: 8px 10px; border-radius: 8px; }
+.report-msg.ok { background: var(--ok-bg); color: var(--ok); }
+.report-msg.warn { background: var(--warn-bg); color: var(--warn); }
+.report-msg.info { background: var(--tint); color: var(--muted); }
+.report-msg a { color: inherit; }
+
+/* Memória */
+.memo { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; display: grid; gap: 10px; min-width: 0; }
+.memo-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.memo-head h2 { font-family: var(--f-display); font-size: 21px; font-weight: 700; margin: 0; }
+.btn {
+  font: 500 13px var(--f-body); color: var(--sky-ink); background: var(--tint); border: 1px solid var(--line);
+  border-radius: 8px; padding: 6px 10px; cursor: pointer;
+}
+.btn:hover { border-color: var(--sky); }
+.btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.memo pre {
+  margin: 0; font-family: var(--f-mono); font-size: 13px; line-height: 1.75; color: var(--ink);
+  white-space: pre-wrap; word-break: break-word; overflow-x: auto;
+}
+.memo pre .c { color: var(--muted); }
+
+/* Base normativa */
+.lower { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+@media (max-width: 860px) { .lower { grid-template-columns: minmax(0, 1fr); } }
+.lower section { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.lower h2 { font-family: var(--f-display); font-weight: 700; font-size: 21px; margin: 0; text-wrap: balance; }
+.reqs { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.reqs li { display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; font-size: 14px; }
+.reqs li::before { content: ""; width: 14px; height: 14px; margin-top: 4px; border-radius: 4px; border: 2px solid var(--sky); }
+.reqs li small { color: var(--muted); font-size: 12.5px; display: block; }
+.formula { font-family: var(--f-mono); font-size: 14px; background: var(--tint); border-radius: 10px; padding: 12px 14px; overflow-x: auto; white-space: nowrap; }
+.defs { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; font-size: 13.5px; }
+.defs dt { font-family: var(--f-mono); font-weight: 500; color: var(--sky-ink); }
+.defs dd { margin: 0; color: var(--ink); }
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+td.n { font-family: var(--f-mono); text-align: right; font-variant-numeric: tabular-nums; }
+th.n { text-align: right; }
+.src { font-size: 12.5px; color: var(--muted); margin: 0; }
+footer { font-size: 12.5px; color: var(--muted); max-width: 80ch; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <img id="logo" src="data:image/jpeg;base64,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" alt="Logotipo" width="56" height="56">
+    <div class="top-text">
+      <p class="eyebrow"><span>REN ANEEL nº 1.000/2021 · art. 73-A, II e §1º</span><span class="ver">Versão 2.0</span></p>
+      <h1>Potência compatível sem análise de inversão de fluxo</h1>
+    </div>
+    <p class="lede">Calcula a potência de microgeração solar compatível com o consumo da unidade durante o período de geração e gera o memorial de cálculo em PDF para apresentar à distribuidora, com o embasamento normativo e cada passo do cálculo.</p>
+  </header>
+
+  <div class="main">
+    <!-- Cálculo -->
+    <div class="panel area-calc" id="calc">
+      <div class="panel-head">
+        <h2>Cálculo</h2>
+        <p>Consumo, classe e, se houver, a potência do projeto.</p>
+      </div>
+
+      <div class="field">
+        <span class="label" id="modo-lbl">Como o consumo será informado</span>
+        <div class="seg" role="radiogroup" aria-labelledby="modo-lbl">
+          <input type="radio" name="modo" id="modo-mensal" value="mensal" checked>
+          <label for="modo-mensal">Média mensal</label>
+          <input type="radio" name="modo" id="modo-anual" value="anual">
+          <label for="modo-anual">Total de 12 meses</label>
+          <input type="radio" name="modo" id="modo-meses" value="meses">
+          <label for="modo-meses">Mês a mês</label>
+        </div>
+      </div>
+
+      <div class="field" id="box-consumo">
+        <label class="label" for="consumo"><span id="consumo-titulo">Consumo médio mensal da unidade</span> <small>últimos 12 ciclos de faturamento</small></label>
+        <div class="num">
+          <input id="consumo" type="text" inputmode="decimal" autocomplete="off" value="706" aria-describedby="consumo-hint">
+          <span class="unit" id="consumo-unit">kWh/mês</span>
+        </div>
+        <p class="hint" id="consumo-hint">Média aritmética dos valores faturados nos 12 últimos ciclos (item 8.15 do Manual ANEEL).</p>
+        <span class="example-tag" id="example-tag">Exemplo 1 do Manual ANEEL <button type="button" id="limpar">limpar</button></span>
+      </div>
+
+      <div class="field" id="box-meses" hidden>
+        <div class="months-top">
+          <div class="txt field">
+            <label for="ultimo">Último ciclo faturado</label>
+            <input type="month" id="ultimo">
+          </div>
+          <p class="hint">Digite o consumo de cada mês como aparece nas faturas. O histórico completo vai para o relatório.</p>
+        </div>
+        <div class="months" id="months"></div>
+        <div class="months-sum" id="months-sum"></div>
+      </div>
+
+      <fieldset class="field">
+        <legend class="label">Classe da unidade consumidora <small>define o fator de ajuste (FA)</small></legend>
+        <div class="classes">
+          <div class="cls">
+            <input type="radio" name="classe" id="cl-res" value="residencial" checked>
+            <label for="cl-res"><span class="name">Residencial</span><span class="sub">Subgrupo B1</span><span class="fa">FA <strong>46%</strong></span></label>
+          </div>
+          <div class="cls">
+            <input type="radio" name="classe" id="cl-com" value="comercial">
+            <label for="cl-com"><span class="name">Comercial</span><span class="sub">Comércio, serviços e outras atividades</span><span class="fa">FA <strong>63%</strong></span></label>
+          </div>
+          <div class="cls">
+            <input type="radio" name="classe" id="cl-ind" value="industrial">
+            <label for="cl-ind"><span class="name">Industrial</span><span class="sub">Classe industrial</span><span class="fa">FA <strong>69%</strong></span></label>
+          </div>
+          <div class="cls">
+            <input type="radio" name="classe" id="cl-rur" value="rural">
+            <label for="cl-rur"><span class="name">Rural</span><span class="sub">Subgrupo B2, atividades agropecuárias</span><span class="fa">FA <strong>53%</strong></span></label>
+          </div>
+          <div class="cls">
+            <input type="radio" name="classe" id="cl-sp" value="servico">
+            <label for="cl-sp"><span class="name">Serviço público</span><span class="sub">Água, esgoto, saneamento e tração elétrica</span><span class="fa">FA <strong>57%</strong></span></label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label class="label" for="projeto">Potência do projeto <small>opcional, para comparar</small></label>
+        <div class="num small">
+          <input id="projeto" type="text" inputmode="decimal" autocomplete="off" placeholder="ex.: 5">
+          <span class="unit">kW</span>
+        </div>
+        <p class="hint">Potência instalada da microgeração em corrente alternada (inversores).</p>
+      </div>
+    </div>
+
+    <!-- Resultado -->
+    <div class="result" aria-live="polite">
+      <div class="hero">
+        <p class="k">Potência compatível (Pg)</p>
+        <p class="big" id="pg">3<span>kW</span></p>
+        <p class="raw" id="raw">Valor calculado <b>2,82 kW</b>, arredondado para cima (item 8.13)</p>
+      </div>
+
+      <div class="status" id="status"></div>
+
+      <div class="stats">
+        <div class="stat">
+          <span class="k">Consumo considerado (C)</span>
+          <span class="v" id="st-c">706<small>kWh/mês</small></span>
+        </div>
+        <div class="stat">
+          <span class="k">Geração estimada com Pg</span>
+          <span class="v" id="st-g">346<small>kWh/mês</small></span>
+        </div>
+      </div>
+
+      <div class="report-card">
+        <div>
+          <h2>Relatório para a distribuidora</h2>
+          <p>Memorial de cálculo em PDF, pronto para anexar ao pedido de orçamento de conexão.</p>
+        </div>
+        <ul class="report-parts">
+          <li>Identificação</li><li>Embasamento normativo</li><li>Dados de entrada</li>
+          <li>Memória de cálculo</li><li>Verificação</li><li>Conclusão</li><li>Assinatura</li>
+        </ul>
+        <button class="btn-primary" type="button" id="gerar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M12 12v6"/><path d="m9 15 3 3 3-3"/></svg>
+          <span id="gerar-txt">Gerar relatório PDF</span>
+        </button>
+        <p class="report-msg info" id="report-msg">Preencha os <a href="#dados">dados do relatório</a> para identificar a unidade e o responsável técnico.</p>
+      </div>
+    </div>
+
+    <!-- Dados do relatório -->
+    <div class="panel area-dados" id="dados">
+      <div class="panel-head">
+        <h2>Dados do relatório</h2>
+        <p>Aparecem na identificação e na assinatura do PDF. Campos em branco saem como "Não informado".</p>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Unidade consumidora</p>
+        <div class="grid2">
+          <div class="txt wide"><label for="r-titular">Titular <small>nome ou razão social</small></label><input id="r-titular" type="text" autocomplete="off"></div>
+          <div class="txt"><label for="r-doc">CPF ou CNPJ</label><input id="r-doc" type="text" autocomplete="off" inputmode="numeric"></div>
+          <div class="txt"><label for="r-uc">Nº da unidade consumidora</label><input id="r-uc" type="text" autocomplete="off"></div>
+          <div class="txt wide"><label for="r-end">Endereço da unidade</label><input id="r-end" type="text" autocomplete="off" placeholder="Rua, número, bairro"></div>
+          <div class="txt"><label for="r-cidade">Município/UF</label><input id="r-cidade" type="text" autocomplete="off" placeholder="ex.: Jaraguá do Sul/SC"></div>
+          <div class="txt"><label for="r-dist">Distribuidora</label><input id="r-dist" type="text" autocomplete="off" placeholder="ex.: Celesc Distribuição S.A."></div>
+          <div class="txt wide"><label for="r-pdisp">Potência disponibilizada da unidade <small>kW, para verificar a gratuidade</small></label><input id="r-pdisp" type="text" inputmode="decimal" autocomplete="off"></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <p class="group-title">Responsável técnico <small style="text-transform:none;letter-spacing:0">(fica salvo neste navegador)</small></p>
+        <div class="grid2">
+          <div class="txt wide"><label for="r-resp">Nome</label><input id="r-resp" type="text" autocomplete="off"></div>
+          <div class="txt"><label for="r-reg">Registro profissional</label><input id="r-reg" type="text" autocomplete="off" placeholder="ex.: CREA-SC 000000-0"></div>
+          <div class="txt"><label for="r-art">ART/TRT nº <small>opcional</small></label><input id="r-art" type="text" autocomplete="off"></div>
+          <div class="txt wide"><label for="r-emp">Empresa <small>opcional, aparece no cabeçalho</small></label><input id="r-emp" type="text" autocomplete="off"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="memo">
+    <div class="memo-head">
+      <h2>Memória de cálculo</h2>
+      <button class="btn" type="button" id="copiar">Copiar</button>
+    </div>
+    <pre id="memo"></pre>
+  </section>
+
+  <div class="lower">
+    <section>
+      <h2>Quando este cálculo se aplica</h2>
+      <ul class="reqs">
+        <li><span>Microgeração distribuída de fonte solar fotovoltaica, com até 75 kW.<small>O inciso II do art. 73-A vale apenas para microgeração.</small></span></li>
+        <li><span>Enquadramento nos critérios de gratuidade (§ 3º do art. 104, § 2º do art. 105 e parágrafo único do art. 106).<small>Na prática: potência da geração menor ou igual à potência disponibilizada da unidade, ou obra da carga suficiente para a geração (item 3.3 do Manual).</small></span></li>
+        <li><span>Unidade com pelo menos 12 ciclos de faturamento.<small>Unidades novas ou com histórico menor ficam fora da regra (item 8.17).</small></span></li>
+        <li><span>Classes de iluminação pública e consumo próprio não usam esta regra.<small>Poder público usa o FA de comércio, serviços e outras atividades (item 8.18).</small></span></li>
+        <li><span>Unidade com o benefício do art. 186 considera só o consumo fora do horário com redução tarifária.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Base normativa</h2>
+      <div class="formula">Pg = C ÷ (FC × 24 h × 30 dias) × FA</div>
+      <dl class="defs">
+        <dt>Pg</dt><dd>potência a ser instalada da microgeração, em kW</dd>
+        <dt>C</dt><dd>consumo médio mensal dos 12 últimos ciclos, em kWh</dd>
+        <dt>FC</dt><dd>fator de capacidade da fonte solar: 16% (art. 655-B)</dd>
+        <dt>FA</dt><dd>fator de ajuste regulatório por classe (Anexo II do Manual)</dd>
+      </dl>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Classe (Anexo II)</th><th class="n">FA</th></tr></thead>
+          <tbody>
+            <tr><td>Residencial</td><td class="n">46%</td></tr>
+            <tr><td>Comércio, serviços e outras atividades</td><td class="n">63%</td></tr>
+            <tr><td>Industrial</td><td class="n">69%</td></tr>
+            <tr><td>Rural</td><td class="n">53%</td></tr>
+            <tr><td>Serviço público</td><td class="n">57%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="src">Fontes: REN ANEEL nº 1.000/2021, art. 73-A (incluído pela REN nº 1.098/2024); Manual de Instruções do art. 73, § 1º, aprovado pelo Despacho ANEEL nº 2.216/2024, itens 8.12 a 8.18 e Anexo II.</p>
+    </section>
+  </div>
+
+  <footer>Ferramenta de apoio ao projeto. O valor que vale para a conexão é o informado pela distribuidora no orçamento de conexão, que deve liberar o maior valor entre esta regra e a máxima potência injetável apurada no estudo (item 8.14).</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+/* Gerador do memorial de cálculo (art. 73-A, REN ANEEL 1.000/2021) em PDF, com jsPDF. */
+function buildReport(jsPDF, d, logo) {
+  var doc = new jsPDF({ unit: "mm", format: "a4", compress: true });
+  var W = 210, H = 297, ML = 20, MR = 20, CW = W - ML - MR;
+  var TOP = 28, BOTTOM = 20;
+  var OR = [213, 106, 28], BL = [26, 80, 168], INK = [24, 32, 44], MU = [92, 102, 118];
+  var LN = [214, 219, 228], TI = [239, 242, 248], ORL = [252, 238, 226], OK = [29, 122, 76], WARN = [178, 84, 0];
+  var PT = 0.3528;
+  var y = TOP;
+
+  var nf = function (n, dec) {
+    return new Intl.NumberFormat("pt-BR", { minimumFractionDigits: dec, maximumFractionDigits: dec }).format(n);
+  };
+  var nAuto = function (n) { return nf(n, Math.abs(n - Math.round(n)) < 1e-9 ? 0 : 2); };
+  var kw = function (n) { return nAuto(n) + " kW"; };
+  var val = function (s) { return s && String(s).trim() ? String(s).trim() : "Não informado"; };
+
+  function tc(c) { doc.setTextColor(c[0], c[1], c[2]); }
+  function fc(c) { doc.setFillColor(c[0], c[1], c[2]); }
+  function dc(c) { doc.setDrawColor(c[0], c[1], c[2]); }
+  function font(style, size, family) { doc.setFont(family || "helvetica", style); doc.setFontSize(size); }
+
+  function band() {
+    var n = 90;
+    for (var i = 0; i < n; i++) {
+      var t = i / (n - 1);
+      fc([Math.round(OR[0] + (BL[0] - OR[0]) * t), Math.round(OR[1] + (BL[1] - OR[1]) * t), Math.round(OR[2] + (BL[2] - OR[2]) * t)]);
+      doc.rect(W * i / n, 0, W / n + 0.3, 2.4, "F");
+    }
+  }
+
+  function header() {
+    band();
+    var x = ML;
+    if (logo) {
+      try { doc.addImage(logo, "JPEG", ML, 7.5, 10.5, 10.5); x = ML + 13.5; } catch (e) { x = ML; }
+    }
+    font("bold", 9); tc(INK);
+    doc.text(d.empresa ? d.empresa : "Memorial de cálculo", x, 11.4);
+    font("normal", 7.5); tc(MU);
+    doc.text("Potência compatível com o consumo · art. 73-A, II, REN ANEEL nº 1.000/2021", x, 15.4);
+    if (d.uc) doc.text("UC " + d.uc, W - MR, 11.4, { align: "right" });
+    doc.text(d.dataCurta, W - MR, 15.4, { align: "right" });
+    dc(LN); doc.setLineWidth(0.25); doc.line(ML, 21, W - MR, 21);
+  }
+
+  function newPage() { doc.addPage(); header(); y = TOP; }
+  function ensure(h) { if (y + h > H - BOTTOM) { newPage(); return true; } return false; }
+
+  function text(str, o) {
+    o = o || {};
+    var size = o.size || 9.8, ind = o.indent || 0, style = o.style || "normal", fam = o.family;
+    var lh = size * PT * (o.lh || 1.45);
+    font(style, size, fam);
+    var lines = doc.splitTextToSize(String(str), CW - ind);
+    for (var i = 0; i < lines.length; i++) {
+      ensure(lh);
+      font(style, size, fam); tc(o.color || INK);
+      doc.text(lines[i], ML + ind, y, { baseline: "top" });
+      y += lh;
+    }
+    y += o.after == null ? 2.2 : o.after;
+  }
+
+  function bullet(str, o) {
+    o = o || {};
+    var size = o.size || 9.6, ind = o.indent || 2, lh = size * PT * 1.45;
+    font("normal", size);
+    var lines = doc.splitTextToSize(String(str), CW - ind - 5);
+    for (var i = 0; i < lines.length; i++) {
+      ensure(lh);
+      font("normal", size); tc(INK);
+      if (i === 0) { tc(OR); doc.text("•", ML + ind, y, { baseline: "top" }); tc(INK); }
+      doc.text(lines[i], ML + ind + 5, y, { baseline: "top" });
+      y += lh;
+    }
+    y += 1.4;
+  }
+
+  function h2(num, title, need) {
+    ensure(need || 34);
+    y += 3.5;
+    font("bold", 12); tc(OR);
+    doc.text(num, ML, y, { baseline: "top" });
+    tc(INK);
+    doc.text(title.toUpperCase(), ML + 8, y, { baseline: "top", charSpace: 0.15 });
+    y += 6.2;
+    dc(LN); doc.setLineWidth(0.25); doc.line(ML, y, W - MR, y);
+    y += 3.8;
+  }
+
+  function h3(title) {
+    ensure(12);
+    y += 1;
+    font("bold", 10); tc(BL);
+    doc.text(title, ML, y, { baseline: "top" });
+    y += 5.6;
+  }
+
+  function quote(paras) {
+    var size = 8.9, lh = size * PT * 1.45, padX = 5;
+    var block = function (h) { fc(TI); doc.rect(ML, y, CW, h, "F"); fc(OR); doc.rect(ML, y, 0.9, h, "F"); };
+    ensure(10);
+    block(2.2); y += 2.2;
+    for (var p = 0; p < paras.length; p++) {
+      var st = paras[p].style || "normal";
+      font(st, size);
+      var lines = doc.splitTextToSize(paras[p].t, CW - padX - 4 - (paras[p].indent || 0));
+      for (var i = 0; i < lines.length; i++) {
+        if (ensure(lh)) { block(1.5); y += 1.5; }
+        block(lh);
+        font(st, size); tc(INK);
+        doc.text(lines[i], ML + padX + (paras[p].indent || 0), y + 0.2, { baseline: "top" });
+        y += lh;
+      }
+      if (p < paras.length - 1) { ensure(1.6); block(1.6); y += 1.6; }
+    }
+    block(2.2); y += 2.2;
+    y += 3;
+  }
+
+  function table(head, rows, widths, o) {
+    o = o || {};
+    var size = o.size || 8.8, lh = size * PT * 1.38, padY = o.padY || 1.9, padX = 2.2;
+    var tw = widths.reduce(function (a, b) { return a + b; }, 0);
+    var x0 = ML;
+    function cellLines(c, w, style) { font(style, size); return doc.splitTextToSize(String(c), w - 2 * padX); }
+    function styleFor(kind, idx, col) {
+      if (kind === "head") return "bold";
+      if (o.strongRows && o.strongRows.indexOf(idx) >= 0) return "bold";
+      if (o.boldCol === col) return "bold";
+      return "normal";
+    }
+    function draw(cells, kind, idx) {
+      var nl = 1;
+      for (var i = 0; i < cells.length; i++) nl = Math.max(nl, cellLines(cells[i], widths[i], styleFor(kind, idx, i)).length);
+      var h = nl * lh + 2 * padY;
+      if (y + h > H - BOTTOM) { newPage(); if (head && kind !== "head") draw(head, "head", -1); }
+      if (kind === "head") { fc(TI); doc.rect(x0, y, tw, h, "F"); }
+      else if (o.highlight === idx) { fc(ORL); doc.rect(x0, y, tw, h, "F"); }
+      var x = x0;
+      for (var j = 0; j < cells.length; j++) {
+        var st = styleFor(kind, idx, j);
+        var ls = cellLines(cells[j], widths[j], st);
+        var col = kind === "head" ? MU : INK;
+        if (kind !== "head" && o.colors && o.colors[idx] && o.colors[idx][j]) col = o.colors[idx][j];
+        var al = (o.align && o.align[j]) || "left";
+        font(st, size); tc(col);
+        for (var k = 0; k < ls.length; k++) {
+          var tx = al === "right" ? x + widths[j] - padX : x + padX;
+          doc.text(ls[k], tx, y + padY + k * lh, { baseline: "top", align: al });
+        }
+        x += widths[j];
+      }
+      dc(kind === "head" ? [190, 198, 210] : LN); doc.setLineWidth(0.2);
+      doc.line(x0, y + h, x0 + tw, y + h);
+      y += h;
+    }
+    if (head) { ensure(26); draw(head, "head", -1); }
+    for (var r = 0; r < rows.length; r++) draw(rows[r], "row", r);
+    y += 3.5;
+  }
+
+  function fraction(left, num, den, right, o) {
+    o = o || {};
+    var h = o.h || 22, sz = o.size || 12, fam = o.family || "helvetica";
+    ensure(h + 3);
+    fc(o.fill || TI); doc.roundedRect(ML, y, CW, h, 1.5, 1.5, "F");
+    var cy = y + h / 2;
+    font("bold", sz + 1, fam); var wl = doc.getTextWidth(left);
+    var wr = right ? doc.getTextWidth(right) : 0;
+    font("normal", sz, fam); var wf = Math.max(doc.getTextWidth(num), doc.getTextWidth(den)) + 6;
+    var total = wl + 4 + wf + (right ? 4 + wr : 0);
+    var x = ML + (CW - total) / 2;
+    tc(INK);
+    font("bold", sz + 1, fam); doc.text(left, x, cy, { baseline: "middle" });
+    var fx = x + wl + 4;
+    font("normal", sz, fam);
+    doc.text(num, fx + wf / 2, cy - 1.5, { align: "center", baseline: "bottom" });
+    dc(INK); doc.setLineWidth(0.35); doc.line(fx, cy, fx + wf, cy);
+    doc.text(den, fx + wf / 2, cy + 1.7, { align: "center", baseline: "top" });
+    if (right) { font("bold", sz + 1, fam); doc.text(right, fx + wf + 4, cy, { baseline: "middle" }); }
+    y += h + 3;
+  }
+
+  function step(n, title, lines, note) {
+    var fl = 9.4 * PT * 1.55;
+    ensure(9 + lines.length * fl + 8);
+    font("bold", 9.6); tc(BL);
+    doc.text("Passo " + n, ML, y, { baseline: "top" });
+    tc(INK); doc.text(title, ML + 17, y, { baseline: "top" });
+    y += 5.4;
+    var bh = lines.length * fl + 3;
+    fc(TI); doc.rect(ML + 17, y, CW - 17, bh, "F");
+    font("normal", 9.4, "courier"); tc(INK);
+    for (var i = 0; i < lines.length; i++) doc.text(lines[i], ML + 20, y + 1.5 + i * fl, { baseline: "top" });
+    y += bh + 1.8;
+    if (note) text(note, { size: 8.4, color: MU, indent: 17, after: 3.2 });
+    else y += 2;
+  }
+
+  // ---------- Página 1 ----------
+  doc.setProperties({
+    title: "Memorial de cálculo - Art. 73-A REN ANEEL 1.000/2021" + (d.uc ? " - UC " + d.uc : ""),
+    subject: "Potência de microgeração distribuída compatível com o consumo",
+    author: d.resp || d.empresa || "",
+    creator: "Calculadora Art. 73-A 2.0"
+  });
+  header();
+  y = 30;
+  font("bold", 8.5); tc(OR);
+  doc.text("MEMORIAL DE CÁLCULO", ML, y, { baseline: "top", charSpace: 0.5 });
+  y += 5.5;
+  font("bold", 17); tc(INK);
+  var tl = doc.splitTextToSize("Potência de microgeração distribuída compatível com o consumo da unidade consumidora", CW);
+  for (var i = 0; i < tl.length; i++) { doc.text(tl[i], ML, y, { baseline: "top" }); y += 7.2; }
+  y += 0.8;
+  font("normal", 10); tc(MU);
+  doc.text("Art. 73-A, inciso II e § 1º, da Resolução Normativa ANEEL nº 1.000/2021", ML, y, { baseline: "top" });
+  y += 9;
+
+  // Faixa-resumo
+  var bw = (CW - 6) / 3, bh = 20;
+  var boxes = [
+    { k: "POTÊNCIA COMPATÍVEL (Pg)", v: nf(d.pg, 0) + " kW", s: "calculado " + nf(d.raw, 2) + " kW", hl: true },
+    { k: "CONSUMO MÉDIO (C)", v: nAuto(d.C) + " kWh", s: "por mês, média de 12 ciclos" },
+    { k: "CLASSE E FATOR DE AJUSTE", v: "FA " + nf(d.fa * 100, 0) + "%", s: d.classeNome }
+  ];
+  for (var b = 0; b < 3; b++) {
+    var bx = ML + b * (bw + 3);
+    fc(boxes[b].hl ? ORL : TI); doc.roundedRect(bx, y, bw, bh, 1.5, 1.5, "F");
+    if (boxes[b].hl) { fc(OR); doc.rect(bx, y + 2, 0.9, bh - 4, "F"); }
+    font("bold", 6.8); tc(MU); doc.text(boxes[b].k, bx + 4, y + 3.2, { baseline: "top", charSpace: 0.2 });
+    font("bold", 15); tc(boxes[b].hl ? OR : INK); doc.text(boxes[b].v, bx + 4, y + 7.6, { baseline: "top" });
+    font("normal", 7.6); tc(MU);
+    doc.text(doc.splitTextToSize(boxes[b].s, bw - 8)[0], bx + 4, y + 14.6, { baseline: "top" });
+  }
+  y += bh + 4;
+
+  // 1. Identificação
+  h2("1", "Identificação");
+  var ident = [
+    ["Titular da unidade consumidora", val(d.titular)],
+    ["CPF / CNPJ", val(d.doc)],
+    ["Unidade consumidora (nº)", val(d.uc)],
+    ["Endereço da unidade", val([d.endereco, d.cidade].filter(Boolean).join(", "))],
+    ["Distribuidora", val(d.distribuidora)],
+    ["Classe de consumo", d.classeNome],
+    ["Fonte e modalidade", "Solar fotovoltaica · microgeração distribuída"],
+    ["Potência do projeto (CA)", d.projeto > 0 ? kw(d.projeto) : "Não informada"],
+    ["Potência disponibilizada da UC", d.potDisp > 0 ? kw(d.potDisp) : "Não informada"]
+  ];
+  table(null, ident, [62, CW - 62], { boldCol: 0, size: 9 });
+
+  // 2. Objetivo
+  h2("2", "Objetivo");
+  text("Este memorial demonstra o cálculo da potência de microgeração distribuída compatível com o consumo da unidade consumidora durante o período de geração, nos termos do art. 73-A, inciso II e § 1º, da Resolução Normativa ANEEL nº 1.000/2021, incluído pela Resolução Normativa ANEEL nº 1.098/2024, e do Manual de Instruções aprovado pelo Despacho ANEEL nº 2.216/2024.");
+  text("Para a microgeração que se enquadre nos critérios de gratuidade e cuja potência não supere o valor assim calculado, a análise de inversão de fluxo de potência de que trata o art. 73 da mesma Resolução fica afastada.");
+
+  // 3. Embasamento normativo
+  h2("3", "Embasamento normativo");
+  h3("3.1  REN ANEEL nº 1.000/2021, art. 73-A (incluído pela REN ANEEL nº 1.098/2024)");
+  quote([
+    { t: "Art. 73-A. A análise de inversão de fluxo de que trata o art. 73 fica afastada nas seguintes situações:" },
+    { t: "(...)", style: "normal" },
+    { t: "II - microgeração distribuída que se enquadre nos critérios de gratuidade dispostos no § 3º do art. 104, no § 2º do art. 105 e no parágrafo único do art. 106 e cuja potência de geração distribuída seja compatível com o consumo da unidade consumidora durante o período de geração, observado o §1º e as instruções da ANEEL;" },
+    { t: "(...)" },
+    { t: "§ 1º A potência de geração distribuída compatível com o consumo da unidade consumidora durante o período de geração, de que trata o inciso II do caput, deve ser obtida pela seguinte equação:" },
+    { t: "Pg = C / (FC x 24 horas x 30 dias) x FA", style: "bold", indent: 8 },
+    { t: "em que:" },
+    { t: "Pg é a potência a ser instalada da microgeração distribuída;", indent: 4 },
+    { t: "C é o consumo da unidade consumidora, observado as instruções da ANEEL;", indent: 4 },
+    { t: "FC é o fator de capacidade, conforme instruções da ANEEL; e", indent: 4 },
+    { t: "FA é o fator de ajuste regulatório calculado com base na simultaneidade obtida das curvas de cargas das campanhas de medição dos processos tarifários, observado as instruções da ANEEL.", indent: 4 },
+    { t: "(...)" },
+    { t: "§ 5º Nas situações previstas para a dispensa da análise da inversão de fluxo do art. 73-A, a distribuidora deve continuar a elaborar e fornecer o orçamento de conexão, conforme prazos estabelecidos no art. 64." }
+  ]);
+
+  h3("3.2  Manual de Instruções do art. 73, § 1º (Despacho ANEEL nº 2.216/2024)");
+  text("O Manual integra a REN nº 1.000/2021 e é de observância obrigatória pelas distribuidoras (item 1.2). Os itens aplicados neste memorial são:", { after: 2.4 });
+  bullet("Item 3.3: o enquadramento nos critérios de gratuidade é verificado quando (a) a potência instalada da microgeração é menor ou igual à potência disponibilizada para o atendimento da carga da unidade consumidora, ou (b) a obra necessária para o atendimento da carga é suficiente para a potência instalada da microgeração.");
+  bullet("Item 8.12: para microgeração de fonte solar enquadrada na gratuidade, a distribuidora deve adotar como potência instalada o valor da equação do § 1º do art. 73-A, com FC = 16% (art. 655-B) e FA conforme o Anexo II.");
+  bullet("Item 8.13: o resultado da equação é arredondado por elevação para o primeiro número inteiro subsequente.");
+  bullet("Item 8.14: o valor a ser liberado ao consumidor é o maior entre a máxima potência injetável apurada no estudo (item 8.9) e o valor obtido pela equação.");
+  bullet("Item 8.15: o consumo C é a média aritmética dos valores faturados nos 12 últimos ciclos de faturamento; para unidade com o benefício tarifário do art. 186, considera-se apenas o consumo no horário sem redução tarifária.");
+  bullet("Item 8.17: a regra não se aplica às classes iluminação pública e consumo próprio nem à unidade com histórico de consumo menor que 12 ciclos.");
+  bullet("Item 8.18: para a classe poder público, aplica-se o fator de ajuste da classe comércio, serviços e outras atividades.");
+  y += 1.5;
+
+  h3("3.3  Fatores de ajuste regulatórios (Anexo II do Manual)");
+  var faRows = [
+    ["Residencial", "46%"], ["Industrial", "69%"], ["Comércio, serviços e outras atividades", "63%"],
+    ["Rural", "53%"], ["Serviço público", "57%"]
+  ];
+  var faIdx = { residencial: 0, industrial: 1, comercial: 2, rural: 3, servico: 4 }[d.classe];
+  table(["Classe", "FA"], faRows, [CW - 40, 40], { align: [null, "right"], highlight: faIdx, strongRows: [faIdx] });
+  text("A linha destacada corresponde à classe da unidade consumidora objeto deste memorial. O fator de capacidade da fonte solar fotovoltaica é FC = 16%, conforme o item 8.12 do Manual.", { size: 8.6, color: MU });
+
+  // 4. Dados de entrada
+  h2("4", "Dados de entrada");
+  var origemC = d.modo === "meses" ? "Média dos 12 ciclos da tabela 4.1 (item 8.15)"
+    : d.modo === "anual" ? "Total de " + nAuto(d.total) + " kWh nos 12 últimos ciclos, dividido por 12 (item 8.15)"
+    : "Média dos 12 últimos ciclos informada pelo solicitante (item 8.15)";
+  var entrada = [
+    ["Classe da unidade consumidora", d.classeNome, "Cadastro da UC"],
+    ["Consumo médio mensal (C)", nf(d.C, 2) + " kWh/mês", origemC],
+    ["Fator de capacidade (FC)", "16%", "Item 8.12 do Manual; art. 655-B"],
+    ["Fator de ajuste regulatório (FA)", nf(d.fa * 100, 0) + "%", "Anexo II do Manual"],
+    ["Horas por dia × dias por mês", "24 h × 30 dias", "Art. 73-A, § 1º"]
+  ];
+  if (d.projeto > 0) entrada.push(["Potência do projeto", kw(d.projeto), "Informada pelo solicitante"]);
+  if (d.potDisp > 0) entrada.push(["Potência disponibilizada", kw(d.potDisp), "Informada pelo solicitante"]);
+  table(["Parâmetro", "Valor", "Origem"], entrada, [52, 36, CW - 88], { boldCol: 1, size: 8.8 });
+
+  if (d.modo === "meses" && d.meses && d.meses.length === 12) {
+    h3("4.1  Histórico de consumo faturado (12 últimos ciclos)");
+    var mRows = d.meses.map(function (m, i) { return [String(i + 1), m.label, nf(m.kwh, m.kwh % 1 ? 2 : 0)]; });
+    mRows.push(["", "Soma", nf(d.total, d.total % 1 ? 2 : 0)]);
+    mRows.push(["", "Média (C)", nf(d.C, 2)]);
+    table(["Ciclo", "Mês de referência", "Consumo (kWh)"], mRows, [22, 60, 46], {
+      align: [null, null, "right"], strongRows: [12, 13], highlight: 13, size: 8.8, padY: 1.3
+    });
+  }
+
+  // 5. Memória de cálculo
+  h2("5", "Memória de cálculo", 64);
+  text("Equação do § 1º do art. 73-A da REN ANEEL nº 1.000/2021:", { after: 2.4 });
+  fraction("Pg =", "C", "FC × 24 h × 30 dias", "× FA");
+
+  var p1;
+  if (d.modo === "meses") p1 = ["C = soma dos 12 ciclos ÷ 12", "C = " + nf(d.total, d.total % 1 ? 2 : 0) + " ÷ 12", "C = " + nf(d.C, 2) + " kWh/mês"];
+  else if (d.modo === "anual") p1 = ["C = total dos 12 ciclos ÷ 12", "C = " + nf(d.total, d.total % 1 ? 2 : 0) + " ÷ 12", "C = " + nf(d.C, 2) + " kWh/mês"];
+  else p1 = ["C = " + nf(d.C, 2) + " kWh/mês"];
+  step(1, "Consumo médio mensal (C)", p1, "Média aritmética dos valores faturados nos 12 últimos ciclos de faturamento (item 8.15 do Manual).");
+  step(2, "Denominador da equação", ["FC × 24 h × 30 dias = 0,16 × 24 × 30", "                    = 115,2 h"], "Equivale às horas de geração a plena potência em um mês, para a fonte solar (FC = 16%).");
+  step(3, "Aplicação do fator de ajuste (FA = " + nf(d.fa * 100, 0) + "%)", [
+    "Pg = C ÷ 115,2 × FA",
+    "Pg = " + nf(d.C, 2) + " ÷ 115,2 × " + nf(d.fa, 2),
+    "Pg = " + nf(d.C / 115.2, 4) + " × " + nf(d.fa, 2),
+    "Pg = " + nf(d.raw, 2) + " kW"
+  ], "FA da classe " + d.classeNome.toLowerCase() + " conforme o Anexo II do Manual. Representa a parcela do consumo simultânea ao período de geração.");
+  step(4, "Arredondamento", ["Pg calculado = " + nf(d.raw, 2) + " kW", "Pg adotado   = " + nf(d.pg, 0) + " kW"], "Arredondamento por elevação para o primeiro número inteiro subsequente (item 8.13 do Manual).");
+  step(5, "Geração média mensal estimada (informativo)", ["Eg = Pg × FC × 24 h × 30 dias", "Eg = " + nf(d.pg, 0) + " × 115,2 = " + nf(d.pg * 115.2, 1) + " kWh/mês"], "Estimativa de produção média da microgeração com a potência calculada, pela mesma base do art. 655-B. Corresponde a " + nf(d.pg * 115.2 / d.C * 100, 0) + "% do consumo médio mensal.");
+
+  // Caixa de resultado
+  ensure(30);
+  y += 1;
+  var rh = 24;
+  fc(ORL); doc.roundedRect(ML, y, CW, rh, 2, 2, "F");
+  dc(OR); doc.setLineWidth(0.5); doc.roundedRect(ML, y, CW, rh, 2, 2, "S");
+  font("bold", 7.4); tc(MU); doc.text("RESULTADO", ML + 6, y + 4.2, { baseline: "top", charSpace: 0.4 });
+  font("bold", 24); tc(OR); doc.text("Pg = " + nf(d.pg, 0) + " kW", ML + 6, y + 9.6, { baseline: "top" });
+  font("normal", 8.8); tc(INK);
+  var rtw = CW * 0.5, rtxX = ML + CW - rtw - 6;
+  var rtx = doc.splitTextToSize("Potência compatível com o consumo. Valor calculado de " + nf(d.raw, 2) + " kW, arredondado para cima. Classe " + d.classeNome.toLowerCase() + ", FA " + nf(d.fa * 100, 0) + "%, consumo médio de " + nf(d.C, 2) + " kWh/mês.", rtw);
+  var rty = y + (rh - rtx.length * 4.3) / 2;
+  for (var r = 0; r < rtx.length; r++) doc.text(rtx[r], rtxX, rty + r * 4.3, { baseline: "top" });
+  y += rh + 5;
+
+  // 6. Verificação
+  h2("6", "Verificação das condições de enquadramento");
+  var ver = [], cols = [];
+  var good = function (s) { return { s: s, c: OK }; }, bad = function (s) { return { s: s, c: WARN }; }, neu = function (s) { return { s: s, c: MU }; };
+  var v1 = d.projeto > 0 ? (d.projeto <= 75 ? good("Atende: " + kw(d.projeto) + ", até 75 kW") : bad("Não atende: " + kw(d.projeto) + ", acima de 75 kW"))
+    : (d.pg <= 75 ? neu("Projeto não informado; Pg = " + nf(d.pg, 0) + " kW") : bad("Pg acima de 75 kW; limite de microgeração"));
+  var v2 = d.potDisp > 0 && d.projeto > 0
+    ? (d.projeto <= d.potDisp ? good("Atende: " + kw(d.projeto) + " para " + kw(d.potDisp) + " disponibilizados") : bad("Verificar item 3.3, b: " + kw(d.projeto) + " acima de " + kw(d.potDisp) + " disponibilizados"))
+    : (d.potDisp > 0 ? neu("Potência disponibilizada: " + kw(d.potDisp)) : neu("Não informado; verificar pela distribuidora"));
+  var v3 = d.modo === "meses" ? good("Atende: 12 ciclos (tabela 4.1)") : neu("Informado pelo solicitante");
+  var v4 = good("Atende: classe " + d.classeNome.toLowerCase());
+  var v5 = d.projeto > 0 ? (d.projeto <= d.pg ? good("Atende: " + kw(d.projeto) + " para limite de " + nf(d.pg, 0) + " kW") : bad("Não atende: " + kw(d.projeto) + " para limite de " + nf(d.pg, 0) + " kW"))
+    : neu("Limite calculado: " + nf(d.pg, 0) + " kW");
+  var reqs = [
+    ["Microgeração solar fotovoltaica com até 75 kW", "Art. 2º, XXIX-A; art. 73-A, II; item 8.12", v1],
+    ["Gratuidade: potência da microgeração até a potência disponibilizada", "Art. 104, § 3º; art. 105, § 2º; art. 106, p. único; item 3.3", v2],
+    ["Histórico de pelo menos 12 ciclos de faturamento", "Itens 8.15, a e 8.17, c", v3],
+    ["Classe de consumo elegível", "Item 8.17, a; Anexo II", v4],
+    ["Potência do projeto compatível com o consumo", "Art. 73-A, § 1º; item 8.13", v5]
+  ];
+  for (var q = 0; q < reqs.length; q++) { ver.push([reqs[q][0], reqs[q][1], reqs[q][2].s]); cols.push([null, null, reqs[q][2].c]); }
+  table(["Condição", "Base", "Situação"], ver, [62, 52, CW - 114], { colors: cols, size: 8.5 });
+
+  // 7. Conclusão
+  h2("7", "Conclusão");
+  text("Aplicando-se a equação do § 1º do art. 73-A da REN ANEEL nº 1.000/2021, com os parâmetros definidos no Manual de Instruções aprovado pelo Despacho ANEEL nº 2.216/2024 (FC = 16% e FA = " + nf(d.fa * 100, 0) + "% para a classe " + d.classeNome.toLowerCase() + "), obtém-se para a unidade consumidora a potência de microgeração compatível com o consumo de " + nf(d.pg, 0) + " kW.");
+  if (d.projeto > 0 && d.projeto <= d.pg && d.projeto <= 75) {
+    var grat = d.potDisp > 0 && d.projeto <= d.potDisp
+      ? "Como a potência pretendida não supera a potência disponibilizada da unidade, atendendo ao critério de gratuidade (item 3.3, a, do Manual), a solicitação"
+      : "Atendidos os critérios de gratuidade (§ 3º do art. 104, § 2º do art. 105 e parágrafo único do art. 106), a solicitação";
+    text("A microgeração pretendida, de " + kw(d.projeto) + ", é menor ou igual a esse valor. " + grat + " enquadra-se no inciso II do art. 73-A, e a análise de inversão de fluxo de potência fica afastada.");
+    text("Nos termos do § 5º do art. 73-A, a distribuidora deve elaborar e fornecer o orçamento de conexão nos prazos estabelecidos no art. 64 da REN nº 1.000/2021.");
+  } else if (d.projeto > 0) {
+    if (d.projeto > 75) {
+      text("A potência pretendida, de " + kw(d.projeto) + ", supera o limite de 75 kW da microgeração distribuída, de modo que o inciso II do art. 73-A não se aplica a esta solicitação.");
+    } else {
+      text("A microgeração pretendida, de " + kw(d.projeto) + ", supera esse valor em " + kw(d.projeto - d.pg) + ". Para enquadramento no inciso II do art. 73-A, a potência instalada deve ser limitada a " + nf(d.pg, 0) + " kW.");
+      text("Mantida a potência de " + kw(d.projeto) + ", a conexão segue o art. 73, § 1º, cabendo à distribuidora, caso identifique inversão de fluxo, apresentar o estudo com as alternativas viáveis. Nesse caso, o valor a ser liberado é o maior entre a máxima potência injetável apurada no estudo e " + nf(d.pg, 0) + " kW (item 8.14 do Manual).");
+    }
+  } else {
+    text("Projetos de microgeração solar fotovoltaica com potência instalada de até " + nf(Math.min(d.pg, 75), 0) + " kW nesta unidade consumidora, atendidos os critérios de gratuidade, enquadram-se no inciso II do art. 73-A, ficando afastada a análise de inversão de fluxo de potência. Nos termos do § 5º do mesmo artigo, a distribuidora deve fornecer o orçamento de conexão nos prazos do art. 64.");
+  }
+  if (d.pg > 75 && !(d.projeto > 75)) {
+    text("Observação: o valor calculado supera 75 kW, limite da microgeração distribuída; para fins do inciso II do art. 73-A, o limite aplicável é de 75 kW.", { size: 8.8, color: MU });
+  }
+
+  // 8. Referências
+  h2("8", "Referências");
+  bullet("ANEEL. Resolução Normativa nº 1.000, de 7 de dezembro de 2021. Estabelece as Regras de Prestação do Serviço Público de Distribuição de Energia Elétrica. Texto compilado.", { size: 8.8 });
+  bullet("ANEEL. Resolução Normativa nº 1.098, de 23 de julho de 2024. Inclui o art. 73-A na Resolução Normativa nº 1.000/2021.", { size: 8.8 });
+  bullet("ANEEL. Despacho nº 2.216, de 2024. Aprova o Manual de Instruções para Apresentação de Estudos de Inversão de Fluxo (art. 73, § 1º, da REN nº 1.000/2021), vigente a partir de 31/07/2024.", { size: 8.8 });
+
+  // Assinatura
+  ensure(52);
+  y += 8;
+  font("normal", 9.8); tc(INK);
+  doc.text((d.cidade ? d.cidade + ", " : "") + d.dataLonga + ".", ML, y, { baseline: "top" });
+  y += 22;
+  var sx = ML + CW / 2;
+  dc(INK); doc.setLineWidth(0.3); doc.line(sx - 45, y, sx + 45, y);
+  y += 2.5;
+  font("bold", 9.6); tc(INK);
+  doc.text(d.resp ? d.resp : "Responsável técnico", sx, y, { align: "center", baseline: "top" });
+  y += 4.6;
+  font("normal", 8.6); tc(MU);
+  var sub = [];
+  if (d.resp) sub.push("Responsável técnico");
+  if (d.registro) sub.push(d.registro);
+  if (sub.length) { doc.text(sub.join(" · "), sx, y, { align: "center", baseline: "top" }); y += 4.4; }
+  if (d.art) { doc.text("ART/TRT nº " + d.art, sx, y, { align: "center", baseline: "top" }); y += 4.4; }
+  if (d.empresa) { doc.text(d.empresa, sx, y, { align: "center", baseline: "top" }); y += 4.4; }
+
+  // Rodapé
+  var n = doc.getNumberOfPages();
+  for (var pg = 1; pg <= n; pg++) {
+    doc.setPage(pg);
+    dc(LN); doc.setLineWidth(0.25); doc.line(ML, H - 14, W - MR, H - 14);
+    font("normal", 7.4); tc(MU);
+    doc.text("Memorial de cálculo · art. 73-A da REN ANEEL nº 1.000/2021 · emitido em " + d.dataCurta, ML, H - 10);
+    doc.text("Página " + pg + " de " + n, W - MR, H - 10, { align: "right" });
+  }
+  return doc;
+}
+if (typeof module !== "undefined") module.exports = { buildReport: buildReport };
+
+</script>
+<script>
+(function () {
+  var FA = { residencial: 0.46, comercial: 0.63, industrial: 0.69, rural: 0.53, servico: 0.57 };
+  var NOMES = { residencial: "Residencial", comercial: "Comércio, serviços e outras atividades", industrial: "Industrial", rural: "Rural", servico: "Serviço público" };
+  var K = 0.16 * 24 * 30; // 115,2
+  var MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+
+  var $ = function (id) { return document.getElementById(id); };
+  var fmt = function (n, d) { return new Intl.NumberFormat("pt-BR", { minimumFractionDigits: d, maximumFractionDigits: d }).format(n); };
+  var fmtAuto = function (n) { return fmt(n, Math.abs(n - Math.round(n)) < 1e-9 ? 0 : 2); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+
+  function parseNum(s) {
+    s = String(s || "").trim().replace(/\s/g, "");
+    if (!s) return NaN;
+    if (s.indexOf(",") >= 0) s = s.replace(/\./g, "").replace(",", ".");
+    else if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, "");
+    var n = Number(s);
+    return isFinite(n) ? n : NaN;
+  }
+  function radio(name) { var el = document.querySelector('input[name="' + name + '"]:checked'); return el ? el.value : null; }
+  function chip(kind, html) { return '<div class="chip ' + kind + '"><span class="dot"></span><p>' + html + "</p></div>"; }
+
+  // ---------- Mês a mês ----------
+  var hoje = new Date();
+  var padrao = new Date(hoje.getFullYear(), hoje.getMonth() - 1, 1);
+  $("ultimo").value = padrao.getFullYear() + "-" + String(padrao.getMonth() + 1).padStart(2, "0");
+
+  var monthsBox = $("months");
+  for (var i = 0; i < 12; i++) {
+    var w = document.createElement("div");
+    w.className = "month";
+    w.innerHTML = '<label for="m' + i + '"></label><input id="m' + i + '" type="text" inputmode="decimal" autocomplete="off" placeholder="kWh">';
+    monthsBox.appendChild(w);
+  }
+  function labelsMeses() {
+    var v = String($("ultimo").value || "");
+    var m = /^(\d{4})-(\d{2})$/.exec(v);
+    var base = m ? new Date(+m[1], +m[2] - 1, 1) : padrao;
+    var out = [];
+    for (var k = 11; k >= 0; k--) {
+      var dt = new Date(base.getFullYear(), base.getMonth() - k, 1);
+      out.push(MESES[dt.getMonth()] + "/" + dt.getFullYear());
+    }
+    return out;
+  }
+  function atualizaLabels() {
+    var ls = labelsMeses();
+    for (var k = 0; k < 12; k++) document.querySelector('label[for="m' + k + '"]').textContent = ls[k];
+  }
+  atualizaLabels();
+
+  function lerMeses() {
+    var ls = labelsMeses(), vals = [], faltam = 0, invalido = false, total = 0;
+    for (var k = 0; k < 12; k++) {
+      var raw = $("m" + k).value;
+      var n = parseNum(raw);
+      if (String(raw).trim() === "") { faltam++; vals.push(null); continue; }
+      if (!(n >= 0)) { invalido = true; vals.push(null); continue; }
+      vals.push(n); total += n;
+    }
+    return { labels: ls, vals: vals, faltam: faltam, invalido: invalido, total: total };
+  }
+
+  // ---------- Estado do cálculo ----------
+  function calcula() {
+    var modo = radio("modo"), classe = radio("classe");
+    var r = { modo: modo, classe: classe, fa: FA[classe], ok: false, erro: "" };
+    if (modo === "meses") {
+      var m = lerMeses();
+      r.mesesInfo = m;
+      if (m.invalido) { r.erro = "Algum mês tem um valor que não é número. Use, por exemplo, 1.250 ou 1250,5."; return r; }
+      if (m.faltam > 0) { r.erro = "Preencha os 12 meses para calcular a média (faltam " + m.faltam + ")."; return r; }
+      r.total = m.total; r.C = m.total / 12;
+      r.meses = m.vals.map(function (v, k) { return { label: m.labels[k], kwh: v }; });
+    } else {
+      var v = parseNum($("consumo").value);
+      if (!(v > 0)) {
+        r.erro = String($("consumo").value).trim() ? "Não foi possível ler o consumo. Use só números, por exemplo 1.250 ou 1250,5." : "";
+        return r;
+      }
+      if (modo === "anual") { r.total = v; r.C = v / 12; } else { r.C = v; }
+    }
+    if (!(r.C > 0)) { r.erro = "O consumo médio precisa ser maior que zero."; return r; }
+    r.raw = r.C / K * r.fa;
+    r.pg = Math.ceil(r.raw - 1e-9);
+    r.ger = r.pg * K;
+    r.projeto = parseNum($("projeto").value);
+    r.potDisp = parseNum($("r-pdisp").value);
+    r.ok = true;
+    return r;
+  }
+
+  var memoTexto = "";
+  var ultimo = null;
+
+  function render() {
+    var modo = radio("modo");
+    $("box-consumo").hidden = modo === "meses";
+    $("box-meses").hidden = modo !== "meses";
+    $("consumo-titulo").textContent = modo === "anual" ? "Consumo total dos 12 meses" : "Consumo médio mensal da unidade";
+    $("consumo-unit").textContent = modo === "anual" ? "kWh/ano" : "kWh/mês";
+
+    var r = calcula();
+    ultimo = r;
+
+    if (modo === "meses") {
+      var mi = r.mesesInfo;
+      $("months-sum").innerHTML = mi.faltam > 0 || mi.invalido
+        ? "<span>Preenchidos: <b>" + (12 - mi.faltam) + " de 12</b></span><span>Soma parcial: <b>" + fmtAuto(mi.total) + " kWh</b></span>"
+        : "<span>Soma: <b>" + fmtAuto(mi.total) + " kWh</b></span><span>Média: <b>" + fmt(mi.total / 12, 2) + " kWh/mês</b></span>";
+    }
+
+    if (!r.ok) {
+      $("pg").innerHTML = "—<span>kW</span>";
+      $("raw").textContent = "Informe o consumo para calcular.";
+      $("st-c").innerHTML = "—<small>kWh/mês</small>";
+      $("st-g").innerHTML = "—<small>kWh/mês</small>";
+      $("status").innerHTML = r.erro ? chip("warn", esc(r.erro)) : "";
+      memoTexto = "";
+      $("memo").innerHTML = '<span class="c">A memória de cálculo aparece aqui depois que o consumo for informado.</span>';
+      $("gerar").disabled = true;
+      return;
+    }
+    $("gerar").disabled = downloadsIndisponivel;
+
+    $("pg").innerHTML = fmt(r.pg, 0) + "<span>kW</span>";
+    $("raw").innerHTML = "Valor calculado <b>" + fmt(r.raw, 2) + " kW</b>, arredondado para cima (item 8.13)";
+    $("st-c").innerHTML = fmt(r.C, r.C % 1 ? 2 : 0) + "<small>kWh/mês</small>";
+    $("st-g").innerHTML = fmt(Math.round(r.ger), 0) + "<small>kWh/mês</small>";
+
+    var st = [];
+    if (r.pg > 75) st.push(chip("warn", "O resultado passa de <b>75 kW</b>. Acima disso a geração deixa de ser microgeração e o art. 73-A, II não se aplica; o teto por esta regra é 75 kW."));
+    if (r.projeto > 0) {
+      if (r.projeto <= r.pg) st.push(chip("ok", "Projeto de <b>" + fmtAuto(r.projeto) + " kW</b> cabe na potência compatível. A análise de inversão de fluxo fica afastada, desde que a unidade atenda aos critérios de gratuidade."));
+      else st.push(chip("warn", "Projeto de <b>" + fmtAuto(r.projeto) + " kW</b> excede a potência compatível em <b>" + fmtAuto(r.projeto - r.pg) + " kW</b>. Acima de " + fmt(r.pg, 0) + " kW a distribuidora pode exigir o estudo de inversão de fluxo (art. 73, § 1º)."));
+      if (r.potDisp > 0 && r.projeto > r.potDisp) st.push(chip("warn", "O projeto supera a potência disponibilizada de <b>" + fmtAuto(r.potDisp) + " kW</b>. A gratuidade depende da obra da carga ser suficiente para a geração (item 3.3, b)."));
+    }
+    $("status").innerHTML = st.join("");
+
+    // Memória de cálculo
+    var linhas = [], html = [];
+    var add = function (t, cls) { linhas.push(t); html.push(cls ? '<span class="' + cls + '">' + esc(t) + "</span>" : esc(t)); };
+    add("Art. 73-A, § 1º da REN ANEEL nº 1.000/2021", "c");
+    add("Classe: " + NOMES[r.classe] + " · FA = " + fmt(r.fa * 100, 0) + "%");
+    if (r.modo === "meses") {
+      add("Consumo faturado: " + r.meses.map(function (m) { return m.label + " " + fmtAuto(m.kwh); }).join(" · "), "c");
+      add("C = " + fmtAuto(r.total) + " kWh ÷ 12 = " + fmt(r.C, 2) + " kWh/mês");
+    } else if (r.modo === "anual") add("C = " + fmtAuto(r.total) + " kWh ÷ 12 = " + fmt(r.C, 2) + " kWh/mês");
+    else add("C = " + fmtAuto(r.C) + " kWh/mês");
+    add("FC × 24 h × 30 dias = 0,16 × 24 × 30 = 115,2 h");
+    add("Pg = C ÷ (FC × 24 × 30) × FA");
+    add("Pg = " + fmt(r.C, 2) + " ÷ 115,2 × " + fmt(r.fa, 2) + " = " + fmt(r.raw, 2) + " kW");
+    add("Arredondado para cima: Pg = " + fmt(r.pg, 0) + " kW");
+    add("Geração estimada: " + fmt(r.pg, 0) + " × 115,2 = " + fmt(r.ger, 1) + " kWh/mês", "c");
+    memoTexto = linhas.join("\n");
+    $("memo").innerHTML = html.join("\n");
+  }
+
+  // ---------- Exemplo inicial ----------
+  var exemplo = true;
+  function saiuDoExemplo() { if (!exemplo) return; exemplo = false; $("example-tag").hidden = true; }
+
+  document.addEventListener("input", function (e) {
+    var t = e.target;
+    if (!t) return;
+    if (t.id === "consumo" || t.name === "classe" || t.name === "modo" || /^m\d+$/.test(t.id)) saiuDoExemplo();
+    if (t.id === "ultimo") atualizaLabels();
+    if (/^r-(resp|reg|emp)$/.test(t.id)) salvaResp();
+    render();
+  });
+
+  var modoAnterior = "mensal";
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="modo"]'), function (rb) {
+    rb.addEventListener("change", function () {
+      var novo = rb.value;
+      var v = parseNum($("consumo").value);
+      if (modoAnterior === "meses") {
+        var m = lerMeses();
+        if (m.faltam === 0 && !m.invalido && m.total > 0) $("consumo").value = fmtAuto(Math.round((novo === "anual" ? m.total : m.total / 12) * 100) / 100);
+      } else if (novo !== "meses" && v > 0 && novo !== modoAnterior) {
+        $("consumo").value = fmtAuto(Math.round((novo === "anual" ? v * 12 : v / 12) * 100) / 100);
+      }
+      modoAnterior = novo;
+      render();
+    });
+  });
+
+  $("limpar").addEventListener("click", function () {
+    $("consumo").value = "";
+    saiuDoExemplo();
+    render();
+    $("consumo").focus();
+  });
+
+  $("copiar").addEventListener("click", function () {
+    var btn = this;
+    if (!memoTexto) return;
+    var feito = function () { btn.textContent = "Copiado"; setTimeout(function () { btn.textContent = "Copiar"; }, 1600); };
+    var selecionar = function () {
+      var rg = document.createRange(); rg.selectNodeContents($("memo"));
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(rg);
+      btn.textContent = "Texto selecionado";
+      setTimeout(function () { btn.textContent = "Copiar"; }, 1800);
+    };
+    try { navigator.clipboard.writeText(memoTexto).then(feito, selecionar); } catch (err) { selecionar(); }
+  });
+
+  // ---------- Responsável técnico lembrado neste navegador ----------
+  var CHAVE = "calc73a.responsavel";
+  function salvaResp() {
+    try { localStorage.setItem(CHAVE, JSON.stringify({ resp: $("r-resp").value, reg: $("r-reg").value, emp: $("r-emp").value })); } catch (e) {}
+  }
+  try {
+    var salvo = JSON.parse(localStorage.getItem(CHAVE) || "null");
+    if (salvo) { $("r-resp").value = salvo.resp || ""; $("r-reg").value = salvo.reg || ""; $("r-emp").value = salvo.emp || ""; }
+  } catch (e) {}
+
+  // ---------- Relatório PDF ----------
+  var downloadsIndisponivel = false;
+  // Três ambientes: dentro do claude.ai com download liberado, dentro do claude.ai sem ele,
+  // ou fora do claude.ai (GitHub Pages, arquivo local), onde o navegador baixa o PDF direto.
+  function obterSaida() {
+    return new Promise(function (resolve) {
+      var tentativas = 0;
+      (function tenta() {
+        if (window.claude && typeof window.claude.use === "function") {
+          Promise.resolve(window.claude.use("downloads")).then(
+            function (dl) { resolve({ via: dl ? "claude" : "bloqueado", dl: dl }); },
+            function () { resolve({ via: "bloqueado", dl: null }); });
+        } else if (window.parent === window && tentativas > 0) resolve({ via: "navegador", dl: null });
+        else if (tentativas++ < 20) setTimeout(tenta, 150);
+        else resolve({ via: window.parent === window ? "navegador" : "bloqueado", dl: null });
+      })();
+    });
+  }
+  var saidaP = obterSaida();
+  saidaP.then(function (saida) {
+    if (saida.via === "bloqueado") {
+      downloadsIndisponivel = true;
+      $("gerar").disabled = true;
+      msg("warn", "O download de arquivos não está disponível nesta visualização. Abra a calculadora pelo claude.ai ou pelo GitHub Pages para salvar o PDF.");
+    }
+  });
+
+  function msg(kind, html) { var el = $("report-msg"); el.className = "report-msg " + kind; el.innerHTML = html; }
+
+  function dadosRelatorio(r) {
+    var agora = new Date();
+    var v = function (id) { return String($(id).value || "").trim(); };
+    return {
+      modo: r.modo, meses: r.meses || null, total: r.total || 0, C: r.C, fa: r.fa, raw: r.raw, pg: r.pg,
+      classe: r.classe, classeNome: NOMES[r.classe],
+      projeto: r.projeto > 0 ? r.projeto : 0, potDisp: r.potDisp > 0 ? r.potDisp : 0,
+      titular: v("r-titular"), doc: v("r-doc"), uc: v("r-uc"), endereco: v("r-end"), cidade: v("r-cidade"),
+      distribuidora: v("r-dist"), resp: v("r-resp"), registro: v("r-reg"), art: v("r-art"), empresa: v("r-emp"),
+      dataCurta: agora.toLocaleDateString("pt-BR"),
+      dataLonga: new Intl.DateTimeFormat("pt-BR", { day: "numeric", month: "long", year: "numeric" }).format(agora),
+      iso: agora.getFullYear() + "-" + String(agora.getMonth() + 1).padStart(2, "0") + "-" + String(agora.getDate()).padStart(2, "0")
+    };
+  }
+
+  function nomeArquivo(d) {
+    var id = d.uc ? "UC-" + d.uc : (d.titular || NOMES[d.classe]);
+    id = id.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-Za-z0-9-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+    return "Memorial-art73A_" + (id || "calculo") + "_" + d.iso + ".pdf";
+  }
+
+  $("gerar").addEventListener("click", function () {
+    var btn = this;
+    var r = calcula();
+    if (!r.ok) { msg("warn", "Informe o consumo antes de gerar o relatório."); return; }
+    if (!window.jspdf || !window.jspdf.jsPDF) { msg("warn", "O gerador de PDF não carregou. Verifique a conexão e recarregue a página."); return; }
+    var d = dadosRelatorio(r);
+    var faltando = [];
+    if (!d.titular) faltando.push("titular");
+    if (!d.uc) faltando.push("nº da UC");
+    if (!d.resp) faltando.push("responsável técnico");
+    var doc, blob;
+    try {
+      doc = buildReport(window.jspdf.jsPDF, d, $("logo").src);
+      blob = doc.output("blob");
+    } catch (e) {
+      msg("warn", "Não foi possível montar o PDF: " + esc(e && e.message || "erro desconhecido") + ".");
+      return;
+    }
+    var nome = nomeArquivo(d);
+    btn.disabled = true; $("gerar-txt").textContent = "Gerando…";
+    var extra = faltando.length ? " Ficaram em branco: " + faltando.join(", ") + "." : "";
+    var ok = function () { msg("ok", "Relatório gerado: <b>" + esc(nome) + "</b> (" + doc.getNumberOfPages() + " páginas)." + esc(extra)); };
+    saidaP.then(function (saida) {
+      if (saida.via === "navegador") { doc.save(nome); ok(); return; }
+      if (!saida.dl) { msg("warn", "O download de arquivos não está disponível nesta visualização. Abra a calculadora pelo claude.ai ou pelo GitHub Pages para salvar o PDF."); return; }
+      return saida.dl.save({ filename: nome, data: blob }).then(ok, function (err) {
+        var code = err && err.code;
+        if (code === "declined") msg("info", "Download cancelado. O relatório pode ser gerado de novo a qualquer momento.");
+        else if (code === "rate_limited") msg("warn", "Já existe um pedido de download aberto. Conclua ou feche esse pedido e tente de novo.");
+        else msg("warn", "O download não está disponível nesta visualização. Abra a calculadora pelo claude.ai ou pelo GitHub Pages para salvar o PDF.");
+      });
+    }).then(function () {
+      btn.disabled = downloadsIndisponivel; $("gerar-txt").textContent = "Gerar relatório PDF";
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

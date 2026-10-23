@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Calcula a potência de microgeração solar compatível com o consumo conforme o art. 73-A da REN ANEEL nº 1.000/2021 e gera o memorial de cálculo em PDF para a distribuidora.">
+<meta name="description" content="Lê a fatura de energia, calcula a potência de microgeração solar compatível com o consumo conforme o art. 73-A da REN ANEEL nº 1.000/2021 e gera o memorial de cálculo em PDF para a distribuidora.">
 <link rel="icon" href="data:image/jpeg;base64,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" type="image/jpeg">
-<title>Calculadora Art. 73-A 2.0</title>
+<title>Calculadora Art. 73-A 3.0</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -84,7 +84,7 @@ h1 {
   font-family: var(--f-display); font-weight: 700; font-size: clamp(28px, 4.2vw, 38px);
   line-height: 1.05; margin: 2px 0 0; text-wrap: balance; letter-spacing: -.005em;
 }
-.lede { margin: 0; color: var(--muted); max-width: 70ch; }
+.lede { margin: 0; color: var(--muted); max-width: 70ch; flex: 1 1 100%; }
 
 /* Grade principal */
 .main {
@@ -294,7 +294,56 @@ th.n { text-align: right; }
 .src { font-size: 12.5px; color: var(--muted); margin: 0; }
 footer { font-size: 12.5px; color: var(--muted); max-width: 80ch; }
 
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+/* Leitor de fatura */
+.leitor { display: grid; gap: 12px; min-width: 0; }
+.drop {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 14px; align-items: center;
+  padding: 16px 18px; border: 1.5px dashed color-mix(in srgb, var(--sky) 55%, var(--line)); border-radius: 12px;
+  background: color-mix(in srgb, var(--sky) 5%, var(--surface)); cursor: pointer; transition: background .15s, border-color .15s;
+}
+.drop:hover, .drop.over { background: color-mix(in srgb, var(--sky) 11%, var(--surface)); border-color: var(--sky); }
+.drop:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.drop svg { grid-row: span 3; width: 34px; height: 34px; color: var(--sky-ink); }
+.drop-t { font-family: var(--f-display); font-weight: 700; font-size: 19px; line-height: 1.15; }
+.drop-s { font-size: 13px; color: var(--muted); line-height: 1.4; }
+.drop-f { font-family: var(--f-mono); font-size: 11.5px; color: var(--sky-ink); letter-spacing: .04em; }
+.leitor.ocupado .drop { opacity: .55; pointer-events: none; }
+
+.leitor-prog { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 12px; border-radius: 10px; background: var(--tint); font-size: 13.5px; }
+.leitor-prog span:nth-child(2) { flex: 1 1 200px; min-width: 0; }
+.spin { width: 16px; height: 16px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--sky) 25%, transparent); border-top-color: var(--sky); animation: gira .8s linear infinite; flex: none; }
+@keyframes gira { to { transform: rotate(360deg); } }
+
+.leitor-res { border: 1px solid var(--line); border-radius: 12px; padding: 14px; display: grid; gap: 12px; background: var(--surface); min-width: 0; }
+.res-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.res-head b { font-size: 14.5px; }
+.res-head .arq { display: block; font-size: 12px; color: var(--muted); word-break: break-all; }
+.metodo { font-family: var(--f-mono); font-size: 11px; letter-spacing: .03em; color: var(--sky-ink); background: var(--tint); border-radius: 999px; padding: 2px 8px; margin-left: 6px; white-space: nowrap; }
+.res-dados { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 16px; }
+@media (max-width: 520px) { .res-dados { grid-template-columns: minmax(0, 1fr); } }
+.res-dados li { display: grid; gap: 1px; min-width: 0; font-size: 13.5px; }
+.res-dados li > span { font-size: 11.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.res-dados li b { font-weight: 600; overflow-wrap: anywhere; }
+.res-dados li small { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+.res-dados li.nao b { color: var(--warn); font-weight: 500; }
+
+.barras { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4px; align-items: end; height: 92px; padding-top: 14px; }
+.barra { display: grid; grid-template-rows: auto 1fr auto; height: 100%; min-width: 0; text-align: center; }
+.barra .v { font-family: var(--f-mono); font-size: 9.5px; color: var(--muted); align-self: end; white-space: nowrap; overflow: hidden; }
+.barra .col { align-self: end; background: color-mix(in srgb, var(--sky) 70%, var(--surface)); border-radius: 3px 3px 0 0; min-height: 2px; }
+.barra.falta .col { background: none; border: 1.5px dashed var(--warn); border-bottom: 0; height: 40%; }
+.barra.falta .v { color: var(--warn); }
+.barra.ultimo .col { background: var(--sun); }
+.barra .m { font-family: var(--f-mono); font-size: 10px; color: var(--muted); padding-top: 3px; border-top: 1px solid var(--line); }
+
+.res-avisos { display: grid; gap: 6px; }
+.res-avisos:empty { display: none; }
+.res-avisos .chip { font-size: 13px; }
+
+.month input.auto { background: color-mix(in srgb, var(--sky) 7%, var(--surface)); border-color: color-mix(in srgb, var(--sky) 35%, var(--line)); }
+.month input.falta { border-color: var(--warn); background: var(--warn-bg); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 </style>
 </head>
 <body>
@@ -302,10 +351,10 @@ footer { font-size: 12.5px; color: var(--muted); max-width: 80ch; }
   <header class="top">
     <img id="logo" src="data:image/jpeg;base64,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" alt="Logotipo" width="56" height="56">
     <div class="top-text">
-      <p class="eyebrow"><span>REN ANEEL nº 1.000/2021 · art. 73-A, II e §1º</span><span class="ver">Versão 2.0</span></p>
+      <p class="eyebrow"><span>REN ANEEL nº 1.000/2021 · art. 73-A, II e §1º</span><span class="ver">Versão 3.0</span></p>
       <h1>Potência compatível sem análise de inversão de fluxo</h1>
     </div>
-    <p class="lede">Calcula a potência de microgeração solar compatível com o consumo da unidade durante o período de geração e gera o memorial de cálculo em PDF para apresentar à distribuidora, com o embasamento normativo e cada passo do cálculo.</p>
+    <p class="lede">Envie a fatura de energia e a calculadora lê os 12 meses de consumo, tira a média e identifica a classe da unidade. Em seguida calcula a potência de microgeração compatível com o consumo e gera o memorial de cálculo em PDF para a distribuidora.</p>
   </header>
 
   <div class="main">
@@ -313,7 +362,23 @@ footer { font-size: 12.5px; color: var(--muted); max-width: 80ch; }
     <div class="panel area-calc" id="calc">
       <div class="panel-head">
         <h2>Cálculo</h2>
-        <p>Consumo, classe e, se houver, a potência do projeto.</p>
+        <p>Envie a fatura ou informe o consumo e a classe.</p>
+      </div>
+      <div class="leitor" id="leitor">
+        <input type="file" id="fatura" accept="application/pdf,.pdf,image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" multiple hidden>
+        <label class="drop" for="fatura" id="drop" tabindex="0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M8.5 17v-3"/><path d="M12 17v-5"/><path d="M15.5 17v-2"/></svg>
+          <span class="drop-t">Ler fatura de energia</span>
+          <span class="drop-s">Arraste o PDF ou a foto da fatura aqui, ou clique para escolher. Os 12 meses, a média e a classe são preenchidos sozinhos.</span>
+          <span class="drop-f">PDF · JPG · PNG</span>
+        </label>
+        <div class="leitor-prog" id="leitor-prog" hidden>
+          <span class="spin" aria-hidden="true"></span>
+          <span id="leitor-etapa" role="status">Lendo a fatura…</span>
+          <button class="btn" type="button" id="leitor-parar" hidden>Parar</button>
+        </div>
+        <div class="leitor-res" id="leitor-res" hidden></div>
+        <p class="hint" id="leitor-priv">A fatura é lida no seu navegador.</p>
       </div>
 
       <div class="field">
@@ -712,7 +777,7 @@ function buildReport(jsPDF, d, logo) {
     title: "Memorial de cálculo - Art. 73-A REN ANEEL 1.000/2021" + (d.uc ? " - UC " + d.uc : ""),
     subject: "Potência de microgeração distribuída compatível com o consumo",
     author: d.resp || d.empresa || "",
-    creator: "Calculadora Art. 73-A 2.0"
+    creator: "Calculadora Art. 73-A 3.0"
   });
   header();
   y = 30;
@@ -806,11 +871,13 @@ function buildReport(jsPDF, d, logo) {
 
   // 4. Dados de entrada
   h2("4", "Dados de entrada");
-  var origemC = d.modo === "meses" ? "Média dos 12 ciclos da tabela 4.1 (item 8.15)"
+  var fonte = d.modo === "meses" && d.fonte ? d.fonte : null;
+  var origemC = fonte ? "Média dos 12 ciclos da tabela 4.1, transcritos da fatura de energia (item 8.15)"
+    : d.modo === "meses" ? "Média dos 12 ciclos da tabela 4.1 (item 8.15)"
     : d.modo === "anual" ? "Total de " + nAuto(d.total) + " kWh nos 12 últimos ciclos, dividido por 12 (item 8.15)"
     : "Média dos 12 últimos ciclos informada pelo solicitante (item 8.15)";
   var entrada = [
-    ["Classe da unidade consumidora", d.classeNome, "Cadastro da UC"],
+    ["Classe da unidade consumidora", d.classeNome, fonte && fonte.classeTrecho ? "Fatura de energia: \u201c" + fonte.classeTrecho + "\u201d" : "Cadastro da UC"],
     ["Consumo médio mensal (C)", nf(d.C, 2) + " kWh/mês", origemC],
     ["Fator de capacidade (FC)", "16%", "Item 8.12 do Manual; art. 655-B"],
     ["Fator de ajuste regulatório (FA)", nf(d.fa * 100, 0) + "%", "Anexo II do Manual"],
@@ -828,6 +895,11 @@ function buildReport(jsPDF, d, logo) {
     table(["Ciclo", "Mês de referência", "Consumo (kWh)"], mRows, [22, 60, 46], {
       align: [null, null, "right"], strongRows: [12, 13], highlight: 13, size: 8.8, padY: 1.3
     });
+    if (fonte) {
+      var ref = fonte.referencia ? " de referência " + fonte.referencia : "";
+      var arq = fonte.arquivos && fonte.arquivos.length ? " (" + fonte.arquivos.join(", ") + ")" : "";
+      text("Valores transcritos do histórico de consumo da fatura de energia elétrica" + ref + arq + " e conferidos pelo responsável técnico.", { size: 8.6, color: MU });
+    }
   }
 
   // 5. Memória de cálculo
@@ -949,6 +1021,732 @@ function buildReport(jsPDF, d, logo) {
   return doc;
 }
 if (typeof module !== "undefined") module.exports = { buildReport: buildReport };
+
+</script>
+<script>
+/* Leitor de faturas de energia elétrica (Brasil).
+   Recebe "tokens" de texto com posição (do PDF ou do OCR) e extrai:
+   histórico de consumo mês a mês, mês de referência, classe, distribuidora e nº da UC. */
+var BillReader = (function () {
+  "use strict";
+
+  var NOMES = ["JANEIRO", "FEVEREIRO", "MARCO", "ABRIL", "MAIO", "JUNHO", "JULHO", "AGOSTO", "SETEMBRO", "OUTUBRO", "NOVEMBRO", "DEZEMBRO"];
+  var ABV = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+
+  function norm(s) {
+    // Mantém 1 caractere por caractere (necessário para mapear posições)
+    var out = "";
+    var str = String(s);
+    for (var i = 0; i < str.length; i++) {
+      var c = str[i];
+      if (c === "º" || c === "°") { out += "O"; continue; }
+      if (c === "ª") { out += "A"; continue; }
+      var b = c.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      if (b.length !== 1) b = b[0] || " ";
+      var u = b.toUpperCase();
+      out += u.length === 1 ? u : b;
+    }
+    return out;
+  }
+
+  function mesDoNome(w) {
+    if (w.length < 3) return 0;
+    for (var i = 0; i < 12; i++) if (NOMES[i].indexOf(w) === 0) return i + 1;
+    return 0;
+  }
+  function key(ano, mes) { return ano * 12 + (mes - 1); }
+  function anoDe(k) { return Math.floor(k / 12); }
+  function mesDe(k) { return (k % 12) + 1; }
+  function rotulo(k) { return ABV[mesDe(k) - 1] + "/" + anoDe(k); }
+  function isoDe(k) { return anoDe(k) + "-" + String(mesDe(k)).padStart(2, "0"); }
+
+  // ---------------- Linhas ----------------
+  function buildLines(tokens) {
+    var pages = {};
+    tokens.forEach(function (t) {
+      if (!t || !String(t.t || "").trim()) return;
+      if (!isFinite(t.x0) || !isFinite(t.y0)) return;
+      t.n = norm(t.t);
+      (pages[t.page || 1] = pages[t.page || 1] || []).push(t);
+    });
+    var lines = [];
+    Object.keys(pages).map(Number).sort(function (a, b) { return a - b; }).forEach(function (p) {
+      var ts = pages[p].slice().sort(function (a, b) { return (a.y0 + a.y1) - (b.y0 + b.y1); });
+      var hs = ts.map(function (t) { return t.y1 - t.y0; }).sort(function (a, b) { return a - b; });
+      var medH = hs[Math.floor(hs.length / 2)] || 8;
+      var cur = null;
+      ts.forEach(function (t) {
+        // caixa efetiva: sinais pequenos ("-", ".") ganham altura mínima para não quebrar a linha
+        var h = Math.max(t.y1 - t.y0, medH * 0.6), cy = (t.y0 + t.y1) / 2;
+        var e0 = cy - h / 2, e1 = cy + h / 2;
+        if (cur) {
+          var ov = Math.min(e1, cur.b1) - Math.max(e0, cur.b0);
+          if (ov >= 0.5 * Math.min(h, cur.b1 - cur.b0)) {
+            cur.toks.push(t);
+            cur.y0 = Math.min(cur.y0, t.y0); cur.y1 = Math.max(cur.y1, t.y1);
+            return;
+          }
+        }
+        cur = { page: p, cy: cy, h: h, b0: e0, b1: e1, y0: t.y0, y1: t.y1, toks: [t] };
+        lines.push(cur);
+      });
+    });
+    lines.forEach(function (L, idx) {
+      L.idx = idx;
+      L.toks.sort(function (a, b) { return a.x0 - b.x0; });
+      var text = "", raw = "", spans = [];
+      var cw = 0, nch = 0;
+      L.toks.forEach(function (t) { cw += (t.x1 - t.x0); nch += Math.max(1, t.n.length); });
+      var avgCw = nch ? cw / nch : 5;
+      L.toks.forEach(function (t, i) {
+        if (i > 0) {
+          var gap = t.x0 - L.toks[i - 1].x1;
+          if (gap > avgCw * 0.25) { text += " "; raw += " "; }
+        }
+        spans.push({ s: text.length, e: text.length + t.n.length, t: t });
+        text += t.n; raw += t.t.length === t.n.length ? t.t : t.n;
+      });
+      L.text = text; L.raw = raw; L.spans = spans; L.cw = avgCw;
+    });
+    return lines;
+  }
+
+  function xAt(L, pos) {
+    for (var i = 0; i < L.spans.length; i++) {
+      var sp = L.spans[i];
+      if (pos < sp.s) return sp.t.x0;
+      if (pos < sp.e) {
+        var n = Math.max(1, sp.e - sp.s);
+        return sp.t.x0 + (sp.t.x1 - sp.t.x0) * ((pos - sp.s) / n);
+      }
+    }
+    var last = L.spans[L.spans.length - 1];
+    return last ? last.t.x1 : 0;
+  }
+  function boxOf(L, s, e) {
+    var x0 = xAt(L, s), x1 = xAt(L, Math.max(s, e - 1));
+    var sp = L.spans.find(function (q) { return e - 1 >= q.s && e - 1 < q.e; });
+    if (sp) x1 += (sp.t.x1 - sp.t.x0) / Math.max(1, sp.e - sp.s);
+    return { x0: x0, x1: Math.max(x1, x0 + 1), cx: (x0 + x1) / 2 };
+  }
+
+  // ---------------- Meses e números ----------------
+  var RE_MES_TXT = /(?<![A-Z0-9])([A-Z]{3,9})\.?(?:(\s?[\/\-\.]\s?)(\d{4}|\d{2})|\s(20\d{2})|\sDE\s(20\d{2})|(\d{4}|\d{2}))?(?![A-Z0-9])/g;
+  var RE_MES_NUM = /(?<![\d\/\.,])(0?[1-9]|1[0-2])\s?\/\s?(20\d{2}|\d{2})(?![\d\/])/g;
+  var RE_NUM = /(?<![\d,\.\/\$A-Z])(\d{1,3}(?:\.\d{3})+|\d{1,6})(?![\d\/%:]|[,\.]\d)/g;
+
+  function anoValido(a, lim) {
+    if (a < 100) a += 2000;
+    return a >= lim.minAno && a <= lim.maxAno ? a : 0;
+  }
+
+  function findMonths(L, lim) {
+    var out = [], m;
+    RE_MES_TXT.lastIndex = 0;
+    while ((m = RE_MES_TXT.exec(L.text))) {
+      var mes = mesDoNome(m[1]);
+      if (!mes) continue;
+      var anoTxt = m[3] || m[4] || m[5] || m[6];
+      var ano = anoTxt ? anoValido(parseInt(anoTxt, 10), lim) : 0;
+      if (anoTxt && !ano) continue;
+      var b = boxOf(L, m.index, m.index + m[0].length);
+      out.push({ L: L, mes: mes, ano: ano, s: m.index, e: m.index + m[0].length, x0: b.x0, x1: b.x1, cx: b.cx, txt: m[0] });
+    }
+    RE_MES_NUM.lastIndex = 0;
+    while ((m = RE_MES_NUM.exec(L.text))) {
+      var a = anoValido(parseInt(m[2], 10), lim);
+      if (!a) continue;
+      var b2 = boxOf(L, m.index, m.index + m[0].length);
+      out.push({ L: L, mes: parseInt(m[1], 10), ano: a, s: m.index, e: m.index + m[0].length, x0: b2.x0, x1: b2.x1, cx: b2.cx, txt: m[0], num: true });
+    }
+    return out.sort(function (p, q) { return p.s - q.s; });
+  }
+
+  function findNums(L, meses) {
+    var out = [], m;
+    RE_NUM.lastIndex = 0;
+    while ((m = RE_NUM.exec(L.text))) {
+      var s = m.index, e = s + m[0].length;
+      var depois = L.text.slice(e, e + 4);
+      if (/^[A-Z]/.test(depois) && !/^KWH/.test(depois)) continue;
+      if (meses.some(function (q) { return s < q.e && e > q.s; })) continue;
+      var v = parseInt(m[1].replace(/\./g, ""), 10);
+      if (!(v >= 0 && v <= 999999)) continue;
+      var b = boxOf(L, s, e);
+      out.push({ L: L, v: v, s: s, e: e, x0: b.x0, x1: b.x1, cx: b.cx });
+    }
+    return out;
+  }
+
+  // ---------------- Referência ----------------
+  function acharReferencia(lines, meses) {
+    var re = /REFER|REF\.|CONTA DO MES|MES\/ANO DE REF|COMPETENCIA|MES DE REF/;
+    for (var i = 0; i < lines.length; i++) {
+      var L = lines[i];
+      if (!re.test(L.text)) continue;
+      var labelM = re.exec(L.text);
+      var lx = xAt(L, labelM.index);
+      var cand = [];
+      for (var j = i; j < Math.min(lines.length, i + 3); j++) {
+        if (lines[j].page !== L.page) break;
+        (meses.byLine[j] || []).forEach(function (mm) {
+          if (!mm.ano) return;
+          if (j === i && mm.s < labelM.index) return;
+          cand.push({ mm: mm, d: (j - i) * 1000 + Math.abs(mm.x0 - lx) });
+        });
+      }
+      if (cand.length) {
+        cand.sort(function (a, b) { return a.d - b.d; });
+        return key(cand[0].mm.ano, cand[0].mm.mes);
+      }
+    }
+    return 0;
+  }
+
+  // Atribui ano a rótulos sem ano (ex.: "DEZ JAN FEV ...") de gráficos
+  function inferirAnos(seq, R) {
+    if (!R || seq.length < 4) return false;
+    var rA = anoDe(R), rM = mesDe(R);
+    function tenta(asc) {
+      var anos = new Array(seq.length);
+      if (asc) {
+        var i = seq.length - 1;
+        anos[i] = seq[i].mes <= rM ? rA : rA - 1;
+        for (i = seq.length - 2; i >= 0; i--) anos[i] = seq[i].mes < seq[i + 1].mes ? anos[i + 1] : anos[i + 1] - 1;
+      } else {
+        anos[0] = seq[0].mes <= rM ? rA : rA - 1;
+        for (var k = 1; k < seq.length; k++) anos[k] = seq[k].mes < seq[k - 1].mes ? anos[k - 1] : anos[k - 1] - 1;
+      }
+      var ok = 0;
+      for (var q = 1; q < seq.length; q++) {
+        var d = key(anos[q], seq[q].mes) - key(anos[q - 1], seq[q - 1].mes);
+        if (d === (asc ? 1 : -1)) ok++;
+      }
+      return { anos: anos, ok: ok };
+    }
+    var a = tenta(true), d = tenta(false);
+    var best = a.ok >= d.ok ? a : d;
+    if (best.ok < seq.length - 2) return false;
+    seq.forEach(function (s, i) { s.ano = best.anos[i]; s.inferido = true; });
+    return true;
+  }
+
+  // ---------------- Estratégias ----------------
+  var RE_EXCLUI = /VENCIMENTO|LEITURA|EMISSAO|APRESENTACAO|NOTA FISCAL|CNPJ|CPF|PROTOCOLO|BANDEIRA|REFER|VALOR A PAGAR|TOTAL A PAGAR|PERIODO/;
+
+  function addCand(map, mm, v, regiao) {
+    if (!mm.ano) return;
+    var k = key(mm.ano, mm.mes);
+    var atual = map.get(k);
+    if (!atual || (regiao && !atual.regiao)) map.set(k, { v: v, regiao: !!regiao });
+  }
+
+  function estrategiaLinha(ctx) {
+    var map = new Map();
+    ctx.lines.forEach(function (L, i) {
+      var ms = ctx.meses.byLine[i] || [];
+      if (!ms.length) return;
+      var regiao = ctx.regiao(i);
+      if (!regiao && RE_EXCLUI.test(L.text)) return;
+      var ns = ctx.nums.byLine[i] || [];
+      ms.forEach(function (mm, k) {
+        var prox = ms[k + 1];
+        var cands = ns.filter(function (n) { return n.x0 >= mm.x1 - 1 && (!prox || n.x1 <= prox.x0 + 1) && n.x0 - mm.x1 < ctx.pageW(L.page) * 0.45; });
+        if (!cands.length) return;
+        var esc = cands[0];
+        var col = ctx.colunaConsumo(i);
+        if (col && cands.length > 1) {
+          esc = cands.slice().sort(function (a, b) { return Math.abs(a.cx - col) - Math.abs(b.cx - col); })[0];
+        }
+        addCand(map, mm, esc.v, regiao);
+      });
+    });
+    return map;
+  }
+
+  function estrategiaColuna(ctx) {
+    var map = new Map();
+    var usados = new Set();
+    ctx.lines.forEach(function (L, i) {
+      var ms = (ctx.meses.byLine[i] || []).filter(function (m) { return m.ano; });
+      if (ms.length < 4) return;
+      var regiao = ctx.regiao(i);
+      var ph = ctx.pageH(L.page);
+      ms.forEach(function (mm) {
+        var tol = Math.max((mm.x1 - mm.x0) * 0.6, L.cw * 1.5, 4);
+        var melhor = null, md = Infinity;
+        for (var j = Math.max(0, i - 25); j < Math.min(ctx.lines.length, i + 25); j++) {
+          if (j === i || ctx.lines[j].page !== L.page) continue;
+          var dy = Math.abs(ctx.lines[j].cy - L.cy);
+          if (dy > ph * 0.3) continue;
+          (ctx.nums.byLine[j] || []).forEach(function (n) {
+            if (usados.has(n)) return;
+            if (Math.abs(n.cx - mm.cx) > tol) return;
+            if (dy < md) { md = dy; melhor = n; }
+          });
+        }
+        if (melhor) { usados.add(melhor); addCand(map, mm, melhor.v, regiao); }
+      });
+    });
+    return map;
+  }
+
+  function fluxo(ctx) {
+    var itens = [];
+    ctx.lines.forEach(function (L, i) {
+      var ms = ctx.meses.byLine[i] || [], ns = ctx.nums.byLine[i] || [];
+      ms.forEach(function (m) { itens.push({ tipo: "m", ref: m, s: m.s, i: i }); });
+      ns.forEach(function (n) { itens.push({ tipo: "n", ref: n, s: n.s, i: i }); });
+    });
+    itens.sort(function (a, b) { return a.i - b.i || a.s - b.s; });
+    return itens;
+  }
+
+  function estrategiaSequencia(ctx) {
+    var map = new Map();
+    var it = fluxo(ctx);
+    for (var k = 0; k < it.length - 1; k++) {
+      if (it[k].tipo !== "m" || !it[k].ref.ano) continue;
+      var nx = it[k + 1];
+      if (nx.tipo !== "n" || nx.i - it[k].i > 2) continue;
+      var L = ctx.lines[it[k].i];
+      var regiao = ctx.regiao(it[k].i);
+      if (!regiao && RE_EXCLUI.test(L.text)) continue;
+      addCand(map, it[k].ref, nx.ref.v, regiao);
+    }
+    return map;
+  }
+
+  function estrategiaBloco(ctx) {
+    var map = new Map();
+    var it = fluxo(ctx);
+    var k = 0;
+    while (k < it.length) {
+      var t = it[k].tipo, j = k;
+      while (j < it.length && it[j].tipo === t) j++;
+      var run = it.slice(k, j);
+      if (t === "m" && run.length >= 4) {
+        var nums = [];
+        for (var q = j; q < it.length && it[q].tipo === "n" && nums.length < run.length; q++) nums.push(it[q]);
+        if (nums.length === run.length) run.forEach(function (r, z) { addCand(map, r.ref, nums[z].ref.v, ctx.regiao(r.i)); });
+        else {
+          // números antes dos meses (gráficos com valores acima dos rótulos)
+          var antes = [];
+          for (var p = k - 1; p >= 0 && it[p].tipo === "n" && antes.length < run.length; p--) antes.unshift(it[p]);
+          if (antes.length === run.length) run.forEach(function (r, z) { addCand(map, r.ref, antes[z].ref.v, ctx.regiao(r.i)); });
+        }
+      }
+      k = j;
+    }
+    return map;
+  }
+
+  // ---------------- Classe ----------------
+  var CLASSES = [
+    { id: "iluminacao", re: /ILUMINACAO PUBLICA|ILUM\.? PUBLICA/ },
+    { id: "consumo_proprio", re: /CONSUMO PROPRIO/ },
+    { id: "poder_publico", re: /PODER PUBLICO/ },
+    { id: "servico", re: /SERVICO PUBLICO|SERV\.? PUBLICO/ },
+    { id: "rural", re: /\bRURAL\b|AGROPECUARI|IRRIGANTE|AQUICULTUR/ },
+    { id: "industrial", re: /\bINDUSTRIA/ },
+    { id: "comercial", re: /\bCOMERC|SERVICOS E OUTRAS|OUTROS SERVICOS|SERVICOS, OUTRAS/ },
+    { id: "residencial", re: /\bRESIDENC/ }
+  ];
+  function primeiraClasse(txt) {
+    var melhor = null;
+    CLASSES.forEach(function (c) {
+      var m = c.re.exec(txt);
+      if (m && (!melhor || m.index < melhor.pos)) melhor = { id: c.id, pos: m.index, len: m[0].length };
+    });
+    return melhor;
+  }
+  function trechoOriginal(L, s, e) {
+    var raw = L.raw || L.text;
+    var t = raw.slice(Math.max(0, s), Math.min(raw.length, e)).replace(/\s+/g, " ").trim();
+    // corta no início de outro campo da fatura
+    t = t.replace(/\s+(Anterior|Atual|Datas?\b|Leitura|Pr[oó]xima|N[º°o]\.? de dias|Vencimento|Modalidade|Unidade de|Tipo de)\b.*$/i, "");
+    if (t.length > 58) t = t.slice(0, 58).replace(/\s+\S*$/, "") + "…";
+    return t;
+  }
+
+  function acharClasse(lines) {
+    // 1) Rótulo "Classe" / "Classificação" e a linha seguinte
+    for (var i = 0; i < lines.length; i++) {
+      var L = lines[i];
+      var m = /\b(CLASSIFICACAO|SUBCLASSE|CLASSE)\b/.exec(L.text);
+      if (!m) continue;
+      var resto = L.text.slice(m.index + m[0].length);
+      var c = primeiraClasse(resto);
+      if (c) {
+        var base = m.index + m[0].length;
+        return { id: c.id, trecho: trechoOriginal(L, base + c.pos, base + c.pos + 60).split(/\s{2,}/)[0], confianca: "alta" };
+      }
+      var N = lines[i + 1];
+      if (N && N.page === L.page) {
+        var c2 = primeiraClasse(N.text);
+        if (c2) return { id: c2.id, trecho: trechoOriginal(N, c2.pos, c2.pos + 60), confianca: "alta" };
+      }
+    }
+    // 2) Subgrupo seguido da classe ("B1 Residencial", "B3 Comercial")
+    for (var j = 0; j < lines.length; j++) {
+      var T = lines[j].text;
+      var sg = /\b(B[1-4])\b[\s\-\/:]*/.exec(T);
+      if (!sg) continue;
+      var c3 = primeiraClasse(T.slice(sg.index, sg.index + 60));
+      if (c3) return { id: c3.id, trecho: trechoOriginal(lines[j], sg.index, sg.index + 60).split(/\s{2,}/)[0], confianca: "alta" };
+      if (sg[1] === "B1") return { id: "residencial", trecho: trechoOriginal(lines[j], sg.index, sg.index + 30), confianca: "media" };
+      if (sg[1] === "B2") return { id: "rural", trecho: trechoOriginal(lines[j], sg.index, sg.index + 30), confianca: "media" };
+      if (sg[1] === "B4") return { id: "iluminacao", trecho: trechoOriginal(lines[j], sg.index, sg.index + 30), confianca: "media" };
+    }
+    // 3) Única classe citada no documento (descontando textos institucionais)
+    var achadas = {};
+    lines.forEach(function (L2) {
+      var t = L2.text.replace(/SERVICO PUBLICO DE (DISTRIBUICAO|ENERGIA)[A-Z ]*/g, "").replace(/TARIFA SOCIAL[A-Z ]*|BAIXA RENDA/g, "");
+      CLASSES.forEach(function (c) { var mm = c.re.exec(t); if (mm && !achadas[c.id]) achadas[c.id] = { L: L2, pos: mm.index }; });
+    });
+    var ids = Object.keys(achadas);
+    if (ids.length === 1) {
+      var a = achadas[ids[0]];
+      return { id: ids[0], trecho: trechoOriginal(a.L, a.pos, a.pos + 50), confianca: "baixa" };
+    }
+    return null;
+  }
+
+  // ---------------- Distribuidora e UC ----------------
+  var DISTRIBUIDORAS = ["CEMIG", "CELESC", "COPEL", "CPFL", "RGE", "ENEL", "LIGHT", "ENERGISA", "EQUATORIAL", "NEOENERGIA", "COELBA", "CELPE", "COSERN", "ELEKTRO", "EDP", "AMAZONAS ENERGIA", "RORAIMA ENERGIA", "CEEE", "DMED", "COCEL", "CERIM", "CERILUZ", "CERTEL", "COPREL", "CERMISSOES", "SULGIPE", "DCELT", "COOPERALIANCA", "EFLUL", "FORCEL", "CHESP", "ENERGIA DE SERGIPE"];
+  function acharDistribuidora(lines) {
+    var melhor = null;
+    for (var i = 0; i < lines.length; i++) {
+      var T = lines[i].text;
+      for (var d = 0; d < DISTRIBUIDORAS.length; d++) {
+        var nome = DISTRIBUIDORAS[d];
+        var re = new RegExp("\\b" + nome + "\\b");
+        var m = re.exec(T);
+        if (!m) continue;
+        var completo = /DISTRIBUI|S\.\s?A|S\/A|ENERGIA|ELETRICIDADE/.test(T.slice(m.index, m.index + 70));
+        var sa = /S\.\s?A\.?|S\/A/.exec(T.slice(m.index, m.index + 80));
+        var fim = sa ? m.index + sa.index + sa[0].length : m.index + Math.min(60, T.length - m.index);
+        var txt = trechoOriginal(lines[i], m.index, fim).split(/\s{2,}/)[0];
+        var sc = (completo ? 2 : 1) + (sa ? 1 : 0);
+        if (!melhor || sc > melhor.sc) melhor = { nome: sa || completo ? txt : nome.charAt(0) + nome.slice(1).toLowerCase(), sc: sc };
+        if (sc >= 3) return melhor.nome;
+      }
+    }
+    return melhor ? melhor.nome : "";
+  }
+
+  var ROTULOS_UC = [
+    /UNIDADE CONSUMIDORA/, /\bINSTALACAO\b/, /\bN[O0]?\.?\s?DA UC\b|\bUC\b/, /CONTA CONTRATO|\bC\.C\b/, /SEU CODIGO|CODIGO DO CLIENTE/
+  ];
+  function digitosValidos(s) {
+    if (/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(s) || /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(s)) return "";
+    if (/^\d{5}-\d{3}$/.test(s) || /^\d{2}\/\d{2}\/\d{2,4}$/.test(s)) return "";
+    var d = s.replace(/\D/g, "");
+    return d.length >= 5 && d.length <= 15 ? s : "";
+  }
+  function acharUC(lines) {
+    var RE_DIG = /\d[\d\.\-\/]{3,20}\d/g;
+    for (var r = 0; r < ROTULOS_UC.length; r++) {
+      for (var i = 0; i < lines.length; i++) {
+        var L = lines[i];
+        var m = ROTULOS_UC[r].exec(L.text);
+        if (!m) continue;
+        var lx0 = xAt(L, m.index), lx1 = xAt(L, m.index + m[0].length);
+        // mesma linha, logo após o rótulo
+        var depois = L.text.slice(m.index + m[0].length, m.index + m[0].length + 30);
+        var md = /^[\s:NOº°\.]*?(\d[\d\.\-\/]{3,20}\d)/.exec(depois);
+        if (md) { var v = digitosValidos(md[1]); if (v) return v; }
+        // linhas abaixo, na mesma coluna
+        for (var j = i + 1; j < Math.min(lines.length, i + 3); j++) {
+          var N = lines[j];
+          if (N.page !== L.page) break;
+          var dm;
+          RE_DIG.lastIndex = 0;
+          while ((dm = RE_DIG.exec(N.text))) {
+            var bx = boxOf(N, dm.index, dm.index + dm[0].length);
+            if (bx.x1 < lx0 - 30 || bx.x0 > lx1 + 30) continue;
+            var v2 = digitosValidos(dm[0]);
+            if (v2) return v2;
+          }
+        }
+      }
+    }
+    return "";
+  }
+
+  // ---------------- Consumo do mês atual ----------------
+  function acharConsumoAtual(lines) {
+    var re = /CONSUMO (TOTAL )?FATURADO NO MES|CONSUMO TOTAL FATURADO|CONSUMO DO MES|CONSUMO FATURADO NO MES/;
+    for (var i = 0; i < lines.length; i++) {
+      var m = re.exec(lines[i].text);
+      if (!m) continue;
+      var resto = lines[i].text.slice(m.index + m[0].length);
+      var n = /^[\s:\(\)KWH]*(\d{1,3}(?:\.\d{3})+|\d{1,6})(?![\d,])/.exec(resto);
+      if (n) return parseInt(n[1].replace(/\./g, ""), 10);
+      var N = lines[i + 1];
+      if (N) {
+        var n2 = /^\s*(\d{1,3}(?:\.\d{3})+|\d{1,6})\s*KWH/.exec(N.text);
+        if (n2) return parseInt(n2[1].replace(/\./g, ""), 10);
+      }
+    }
+    return null;
+  }
+
+  // ---------------- Principal ----------------
+  function parse(tokens, opts) {
+    opts = opts || {};
+    var hoje = opts.hoje || new Date();
+    var lim = { minAno: hoje.getFullYear() - 8, maxAno: hoje.getFullYear() + 1 };
+    var limiteK = key(hoje.getFullYear(), hoje.getMonth() + 1) + 1;
+    var lines = buildLines(tokens);
+    var res = {
+      historico: [], referencia: null, classe: null, distribuidora: "", uc: "",
+      avisos: [], linhas: lines.length, metodo: opts.metodo || "texto", estrategia: ""
+    };
+    if (!lines.length) { res.avisos.push("Nenhum texto foi encontrado na fatura."); return res; }
+
+    var meses = { byLine: {} }, nums = { byLine: {} };
+    lines.forEach(function (L, i) {
+      meses.byLine[i] = findMonths(L, lim);
+      nums.byLine[i] = findNums(L, meses.byLine[i]);
+    });
+
+    var R = acharReferencia(lines, meses);
+
+    // Rótulos de mês sem ano: só valem em linhas com vários meses (eixos de gráfico)
+    lines.forEach(function (L, i) {
+      var semAno = meses.byLine[i].filter(function (m) { return !m.ano && !m.num; });
+      var comAno = meses.byLine[i].filter(function (m) { return m.ano; });
+      if (semAno.length >= 4 && comAno.length === 0) {
+        var refInf = R;
+        if (!refInf) {
+          var maxK = 0;
+          Object.keys(meses.byLine).forEach(function (j) { meses.byLine[j].forEach(function (m) { if (m.ano) maxK = Math.max(maxK, key(m.ano, m.mes)); }); });
+          refInf = maxK || key(hoje.getFullYear(), hoje.getMonth() + 1) - 1;
+        }
+        if (!inferirAnos(semAno, refInf)) semAno.forEach(function (m) { m.ano = 0; });
+      }
+      meses.byLine[i] = meses.byLine[i].filter(function (m) { return m.ano && key(m.ano, m.mes) <= limiteK; });
+    });
+
+    // Região do histórico
+    var inicioHist = [];
+    lines.forEach(function (L, i) { if (/HISTORICO/.test(L.text)) inicioHist.push(i); });
+    var pageW = {}, pageH = {};
+    (opts.paginas || []).forEach(function (p) { pageW[p.page] = p.w; pageH[p.page] = p.h; });
+    lines.forEach(function (L) {
+      L.toks.forEach(function (t) {
+        pageW[L.page] = Math.max(pageW[L.page] || 0, t.x1);
+        pageH[L.page] = Math.max(pageH[L.page] || 0, t.y1);
+      });
+    });
+
+    // Coluna de consumo pelo cabeçalho (quando "dias" vem antes do consumo)
+    var colunaCache = {};
+    function colunaConsumo(i) {
+      if (i in colunaCache) return colunaCache[i];
+      var col = 0;
+      for (var j = i - 1; j >= Math.max(0, i - 16); j--) {
+        var H = lines[j];
+        if (H.page !== lines[i].page) break;
+        var mc = /\bCONS[A-Z\.]*/.exec(H.text), md = /\bDIAS?\b/.exec(H.text);
+        if (mc) {
+          var xc = boxOf(H, mc.index, mc.index + mc[0].length).cx;
+          if (md) {
+            var xd = boxOf(H, md.index, md.index + md[0].length).cx;
+            if (xd < xc) col = xc;
+          }
+          break;
+        }
+      }
+      colunaCache[i] = col;
+      return col;
+    }
+
+    var ctx = {
+      lines: lines, meses: meses, nums: nums, colunaConsumo: colunaConsumo,
+      pageW: function (p) { return pageW[p] || 600; }, pageH: function (p) { return pageH[p] || 800; },
+      regiao: function (i) {
+        return inicioHist.some(function (h) { return i >= h && i - h <= 45 && lines[h].page === lines[i].page; });
+      }
+    };
+
+    var estrategias = [
+      { nome: "linha", f: estrategiaLinha, prio: 4 },
+      { nome: "coluna", f: estrategiaColuna, prio: 3 },
+      { nome: "sequencia", f: estrategiaSequencia, prio: 2 },
+      { nome: "bloco", f: estrategiaBloco, prio: 1 }
+    ];
+    var melhor = null;
+    estrategias.forEach(function (es) {
+      var map = es.f(ctx);
+      if (!map.size) return;
+      var ks = Array.from(map.keys()).sort(function (a, b) { return a - b; });
+      var regiaoKs = ks.filter(function (k) { return map.get(k).regiao; });
+      var base = regiaoKs.length >= 4 ? regiaoKs : ks;
+      var top = base[base.length - 1];
+      var n = base.filter(function (k) { return k > top - 12; }).length;
+      var score = n * 100 + regiaoKs.length * 2 + es.prio;
+      if (!melhor || score > melhor.score) melhor = { nome: es.nome, map: map, top: top, score: score, base: base };
+    });
+
+    if (melhor && melhor.score < 300) melhor = null;
+    if (melhor) {
+      res.estrategia = melhor.nome;
+      var top = melhor.top;
+      var atual = null;
+      if (R && R === top + 1) {
+        atual = acharConsumoAtual(lines);
+        if (atual != null) { melhor.map.set(R, { v: atual, regiao: false, atual: true }); top = R; }
+      }
+      var ultimoK = top;
+      for (var k = ultimoK - 11; k <= ultimoK; k++) {
+        var c = melhor.map.get(k);
+        if (c && melhor.base.indexOf(k) < 0 && !c.atual) c = null;
+        res.historico.push({ k: k, iso: isoDe(k), rotulo: rotulo(k), kwh: c ? c.v : null, atual: !!(c && c.atual) });
+      }
+      if (R && R > ultimoK) res.avisos.push("O mês de referência da fatura (" + rotulo(R) + ") não aparece no histórico lido. Confira se o último mês está correto.");
+    }
+    res.referencia = R ? { k: R, iso: isoDe(R), rotulo: rotulo(R) } : null;
+    res.classe = acharClasse(lines);
+    res.distribuidora = acharDistribuidora(lines);
+    res.uc = acharUC(lines);
+
+    var tudo = lines.map(function (L) { return L.text; }).join("\n");
+    if (/FORA (DE )?PONTA/.test(tudo)) res.avisos.push("A fatura tem consumo separado por posto horário (ponta e fora de ponta). Confira se cada mês soma todos os postos.");
+    if (/INJETAD|ENERGIA COMPENSADA|CREDITOS? DE ENERGIA/.test(tudo)) res.avisos.push("A unidade parece já ter geração distribuída. Confira se os valores lidos são o consumo faturado de cada mês.");
+    return finalizar(res);
+  }
+
+  function finalizar(res) {
+    var lidos = res.historico.filter(function (h) { return h.kwh != null; });
+    res.mesesLidos = lidos.length;
+    res.media = lidos.length === 12 ? lidos.reduce(function (a, h) { return a + h.kwh; }, 0) / 12 : null;
+    if (res.historico.length && lidos.length < 12) {
+      var faltam = res.historico.filter(function (h) { return h.kwh == null; }).map(function (h) { return h.rotulo; });
+      res.avisos.unshift("Faltam " + faltam.length + " mês(es) no histórico lido: " + faltam.join(", ") + ". Preencha pela fatura.");
+    }
+    if (!res.historico.length) res.avisos.unshift("Não encontrei o histórico de consumo na fatura.");
+    if (lidos.length && lidos.filter(function (h) { return h.kwh === 0; }).length >= 3) res.avisos.push("Há meses com consumo zero no histórico. O Manual pede 12 ciclos faturados; confira se a unidade estava ligada nesse período.");
+    if (lidos.length >= 6) {
+      var ord = lidos.map(function (h) { return h.kwh; }).sort(function (a, b) { return a - b; });
+      var med = ord[Math.floor(ord.length / 2)];
+      var fora = lidos.filter(function (h) { return med > 0 && h.kwh > med * 3; });
+      if (fora.length) res.avisos.push("Confira " + fora.map(function (h) { return h.rotulo + " (" + h.kwh + " kWh)"; }).join(", ") + ": valor muito acima dos outros meses, pode ser erro de leitura.");
+    }
+    if (!res.classe) res.avisos.push("Não identifiquei a classe da unidade. Selecione a classe manualmente.");
+    else if (res.classe.id === "iluminacao" || res.classe.id === "consumo_proprio") res.avisos.push("A classe lida (" + res.classe.trecho + ") não pode usar a regra do art. 73-A, II (item 8.17 do Manual).");
+    else if (res.classe.id === "poder_publico") res.avisos.push("Classe poder público: usa o fator de comércio, serviços e outras atividades (item 8.18 do Manual).");
+    return res;
+  }
+
+  // Resultado vindo da leitura pelo Claude (JSON)
+  function deJson(obj, opts) {
+    opts = opts || {};
+    var hoje = opts.hoje || new Date();
+    var limiteK = key(hoje.getFullYear(), hoje.getMonth() + 1) + 1;
+    var res = { historico: [], referencia: null, classe: null, distribuidora: "", uc: "", avisos: [], metodo: "claude", estrategia: "claude" };
+    obj = obj && typeof obj === "object" ? obj : {};
+    var map = new Map();
+    (Array.isArray(obj.historico) ? obj.historico : []).forEach(function (h) {
+      var m = /^(\d{4})-(\d{1,2})$/.exec(String(h && h.mes || "").trim());
+      var v = Number(h && h.kwh);
+      if (!m || !isFinite(v) || v < 0) return;
+      var k = key(parseInt(m[1], 10), parseInt(m[2], 10));
+      if (k > limiteK || map.has(k)) return;
+      map.set(k, Math.round(v));
+    });
+    var ref = /^(\d{4})-(\d{1,2})$/.exec(String(obj.referencia || ""));
+    if (ref) { var rk = key(+ref[1], +ref[2]); res.referencia = { k: rk, iso: isoDe(rk), rotulo: rotulo(rk) }; }
+    if (map.size) {
+      var top = Math.max.apply(null, Array.from(map.keys()));
+      for (var k = top - 11; k <= top; k++) res.historico.push({ k: k, iso: isoDe(k), rotulo: rotulo(k), kwh: map.has(k) ? map.get(k) : null });
+    }
+    var mapa = { residencial: "residencial", comercial: "comercial", industrial: "industrial", rural: "rural", servico_publico: "servico", poder_publico: "poder_publico", iluminacao_publica: "iluminacao", consumo_proprio: "consumo_proprio" };
+    if (obj.classe && mapa[obj.classe]) res.classe = { id: mapa[obj.classe], trecho: String(obj.classe_texto || obj.classe).slice(0, 90), confianca: "alta" };
+    var s = function (v) { return v == null ? "" : String(v).trim().slice(0, 140); };
+    res.distribuidora = s(obj.distribuidora); res.uc = s(obj.uc);
+    res.titular = s(obj.titular); res.documento = s(obj.documento); res.endereco = s(obj.endereco); res.municipio = s(obj.municipio_uf);
+    if (obj.grupo === "A") res.avisos.push("A fatura é do Grupo A. Confira se cada mês soma os consumos de ponta e fora de ponta.");
+    if (obj.observacoes) res.avisos.push(String(obj.observacoes).slice(0, 300));
+    return finalizar(res);
+  }
+
+  // Junta leituras de vários arquivos (ex.: duas fotos da mesma fatura, ou faturas de meses diferentes)
+  function juntar(lista) {
+    lista = lista.filter(Boolean);
+    if (lista.length === 1) return lista[0];
+    var map = new Map();
+    var base = lista.slice().sort(function (a, b) { return (b.referencia ? b.referencia.k : 0) - (a.referencia ? a.referencia.k : 0); });
+    base.forEach(function (r) { r.historico.forEach(function (h) { if (h.kwh != null && !map.has(h.k)) map.set(h.k, h); }); });
+    var res = { historico: [], referencia: base[0].referencia, avisos: [], metodo: base.map(function (r) { return r.metodo; }).filter(function (v, i, a) { return a.indexOf(v) === i; }).join(" + "), estrategia: "juntas" };
+    ["classe", "distribuidora", "uc", "titular", "documento", "endereco", "municipio"].forEach(function (f) {
+      for (var i = 0; i < base.length; i++) if (base[i][f]) { res[f] = base[i][f]; break; }
+    });
+    if (map.size) {
+      var top = Math.max.apply(null, Array.from(map.keys()));
+      for (var k = top - 11; k <= top; k++) { var h = map.get(k); res.historico.push({ k: k, iso: isoDe(k), rotulo: rotulo(k), kwh: h ? h.kwh : null }); }
+    }
+    base.forEach(function (r) { r.avisos.forEach(function (a) { if (!/^Faltam|^Não encontrei o histórico|^Não identifiquei a classe/.test(a) && res.avisos.indexOf(a) < 0) res.avisos.push(a); }); });
+    return finalizar(res);
+  }
+
+  // ---------------- Adaptadores ----------------
+  // pdf.js: itens de texto de uma página → tokens (y de cima para baixo)
+  function tokensDoPdf(items, viewport, page, Util) {
+    var out = [];
+    items.forEach(function (it) {
+      if (!it.str || !it.str.trim()) return;
+      var tr = Util.transform(viewport.transform, it.transform);
+      var fh = Math.hypot(tr[2], tr[3]) || 8;
+      var w = (it.width || 0) * viewport.scale;
+      var rot = Math.abs(tr[1]) > Math.abs(tr[0]);
+      if (rot) out.push({ t: it.str, x0: tr[4] - fh, x1: tr[4], y0: tr[5] - w, y1: tr[5], page: page });
+      else out.push({ t: it.str, x0: tr[4], x1: tr[4] + Math.max(w, it.str.length * fh * 0.4), y0: tr[5] - fh, y1: tr[5], page: page });
+    });
+    return out;
+  }
+
+  // Correções típicas de OCR em rótulos de mês (troca 1 caractere por 1 caractere)
+  var RE_ABV = "(JAN|FEV|MAR|ABR|MAI|JUN|JUL|AGO|SET|OUT|NOV|DEZ)";
+  function corrigeOcr(txt) {
+    var u = norm(txt);
+    var m = new RegExp("^" + RE_ABV + "([I1L\\|])(\\d{2,4})$").exec(u);
+    if (m) return txt.slice(0, 3) + "/" + txt.slice(4);
+    m = new RegExp("^" + RE_ABV + "(\\/?)([0-9OZSIL]{2,4})$").exec(u);
+    if (m && /[OZSIL]/.test(m[3])) {
+      var anoFix = m[3].replace(/O/g, "0").replace(/Z/g, "2").replace(/S/g, "5").replace(/[IL]/g, "1");
+      return txt.slice(0, 3 + m[2].length) + anoFix;
+    }
+    if (/^0UT/.test(u)) return "O" + txt.slice(1);
+    if (/^5ET/.test(u)) return "S" + txt.slice(1);
+    return txt;
+  }
+
+  // Tesseract.js: blocos → palavras → tokens
+  function tokensDoOcr(data, page) {
+    var out = [];
+    (data.blocks || []).forEach(function (b) {
+      (b.paragraphs || []).forEach(function (p) {
+        (p.lines || []).forEach(function (l) {
+          (l.words || []).forEach(function (w) {
+            if (!w.text || !w.text.trim() || w.confidence < 20) return;
+            out.push({ t: corrigeOcr(w.text), x0: w.bbox.x0, x1: w.bbox.x1, y0: w.bbox.y0, y1: w.bbox.y1, page: page });
+          });
+        });
+      });
+    });
+    if (!out.length && data.words) data.words.forEach(function (w) { out.push({ t: w.text, x0: w.bbox.x0, x1: w.bbox.x1, y0: w.bbox.y0, y1: w.bbox.y1, page: page }); });
+    return out;
+  }
+
+  return {
+    parse: parse, deJson: deJson, juntar: juntar,
+    tokensDoPdf: tokensDoPdf, tokensDoOcr: tokensDoOcr,
+    _int: { buildLines: buildLines, norm: norm, rotulo: rotulo, key: key }
+  };
+})();
+if (typeof module !== "undefined") module.exports = BillReader;
 
 </script>
 <script>
@@ -1119,6 +1917,7 @@ if (typeof module !== "undefined") module.exports = { buildReport: buildReport }
     if (!t) return;
     if (t.id === "consumo" || t.name === "classe" || t.name === "modo" || /^m\d+$/.test(t.id)) saiuDoExemplo();
     if (t.id === "ultimo") atualizaLabels();
+    if (/^m\d+$/.test(t.id)) t.classList.remove("auto", "falta");
     if (/^r-(resp|reg|emp)$/.test(t.id)) salvaResp();
     render();
   });
@@ -1207,6 +2006,7 @@ if (typeof module !== "undefined") module.exports = { buildReport: buildReport }
       projeto: r.projeto > 0 ? r.projeto : 0, potDisp: r.potDisp > 0 ? r.potDisp : 0,
       titular: v("r-titular"), doc: v("r-doc"), uc: v("r-uc"), endereco: v("r-end"), cidade: v("r-cidade"),
       distribuidora: v("r-dist"), resp: v("r-resp"), registro: v("r-reg"), art: v("r-art"), empresa: v("r-emp"),
+      fonte: r.modo === "meses" && fonteFatura ? fonteFatura : null,
       dataCurta: agora.toLocaleDateString("pt-BR"),
       dataLonga: new Intl.DateTimeFormat("pt-BR", { day: "numeric", month: "long", year: "numeric" }).format(agora),
       iso: agora.getFullYear() + "-" + String(agora.getMonth() + 1).padStart(2, "0") + "-" + String(agora.getDate()).padStart(2, "0")
@@ -1254,6 +2054,377 @@ if (typeof module !== "undefined") module.exports = { buildReport: buildReport }
       btn.disabled = downloadsIndisponivel; $("gerar-txt").textContent = "Gerar relatório PDF";
     });
   });
+
+  // ---------- Leitura da fatura ----------
+  var LIBS = {
+    pdf: "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js",
+    pdfWorker: "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js",
+    ocr: "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js"
+  };
+  var CLASSE_RADIO = { residencial: "cl-res", comercial: "cl-com", poder_publico: "cl-com", industrial: "cl-ind", rural: "cl-rur", servico: "cl-sp" };
+  var CLASSE_NOME = { residencial: "Residencial", comercial: "Comercial", poder_publico: "Poder público (usa o FA do comercial)", industrial: "Industrial", rural: "Rural", servico: "Serviço público", iluminacao: "Iluminação pública", consumo_proprio: "Consumo próprio" };
+  var METODO_NOME = { texto: "texto do PDF", ocr: "reconhecimento de imagem", claude: "lido pelo Claude" };
+  var fonteFatura = null;
+  var emClaude = !!(window.claude && typeof window.claude.use === "function");
+  var ocrPossivel = !emClaude;
+  var leitorClaude = null;
+  var leituraCtl = null;
+
+  var claudeP = !emClaude ? Promise.resolve(null) : Promise.resolve(window.claude.use("sample")).then(function (s) {
+    if (!s) return null;
+    return Promise.resolve(s.limits()).then(function (l) {
+      return l && l.images ? { sample: s, max: Math.max(1, l.images.maxCount || 4), bytes: l.images.maxInputBytes || 5e6 } : null;
+    }, function () { return null; });
+  }, function () { return null; });
+  claudeP.then(function (c) {
+    leitorClaude = c;
+    $("leitor-priv").textContent = c
+      ? "PDFs com texto são lidos no seu navegador. Fotos e PDFs escaneados são lidos pelo Claude, na sua conta."
+      : emClaude ? "PDFs com texto são lidos no seu navegador. Fotos precisam do Claude, que não está disponível nesta visualização."
+      : "A fatura é lida no seu navegador e não é enviada para nenhum servidor. Fotos nítidas, de frente e bem iluminadas dão o melhor resultado.";
+  });
+
+  var scripts = {};
+  function carregaScript(src) {
+    if (!scripts[src]) scripts[src] = new Promise(function (res, rej) {
+      var s = document.createElement("script");
+      s.src = src; s.async = true;
+      s.onload = function () { res(); };
+      s.onerror = function () { delete scripts[src]; rej(new Error("Não foi possível baixar o leitor de " + (/tesseract/.test(src) ? "imagens" : "PDF") + ". Verifique a conexão com a internet.")); };
+      document.head.appendChild(s);
+    });
+    return scripts[src];
+  }
+  function carregaPdfJs() { return carregaScript(LIBS.pdf).then(function () { return carregaScript(LIBS.pdfWorker); }); }
+
+  function etapa(t, podeParar) {
+    $("leitor-prog").hidden = false;
+    $("leitor-etapa").textContent = t;
+    $("leitor-parar").hidden = !podeParar;
+  }
+  function cancelado() { return leituraCtl && leituraCtl.signal.aborted; }
+  function pararSeCancelado() { if (cancelado()) { var e = new Error("cancelado"); e.code = "cancelled"; throw e; } }
+
+  function completo(r) { return r && r.mesesLidos === 12 && r.classe; }
+  function melhorLeitura(a, b) {
+    if (!a) return b; if (!b) return a;
+    var sa = a.mesesLidos * 10 + (a.classe ? 1 : 0), sb = b.mesesLidos * 10 + (b.classe ? 1 : 0);
+    var m = sb > sa ? b : a, o = m === a ? b : a;
+    ["classe", "distribuidora", "uc", "titular", "documento", "endereco", "municipio", "referencia"].forEach(function (f) { if (!m[f] && o[f]) m[f] = o[f]; });
+    return m;
+  }
+
+  // --- PDF ---
+  function abrePdf(file) {
+    return file.arrayBuffer().then(function (buf) {
+      return window.pdfjsLib.getDocument({ data: new Uint8Array(buf), isEvalSupported: false, verbosity: 0 }).promise;
+    });
+  }
+  function textoDoPdf(pdf) {
+    var toks = [], paginas = [], plano = [], n = Math.min(pdf.numPages, 3), p = 1;
+    function prox() {
+      if (p > n) return Promise.resolve({ toks: toks, paginas: paginas, plano: plano.join("\n") });
+      var num = p++;
+      return pdf.getPage(num).then(function (page) {
+        var vp = page.getViewport({ scale: 1 });
+        return page.getTextContent().then(function (tc) {
+          toks = toks.concat(BillReader.tokensDoPdf(tc.items, vp, num, window.pdfjsLib.Util));
+          paginas.push({ page: num, w: vp.width, h: vp.height });
+          plano.push(tc.items.map(function (i) { return i.str; }).join(" "));
+          return prox();
+        });
+      });
+    }
+    return prox();
+  }
+  function renderPagina(pdf, num, largura) {
+    return pdf.getPage(num).then(function (page) {
+      var vp1 = page.getViewport({ scale: 1 });
+      var vp = page.getViewport({ scale: largura / vp1.width });
+      var cv = document.createElement("canvas");
+      cv.width = Math.round(vp.width); cv.height = Math.round(vp.height);
+      var ctx = cv.getContext("2d");
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, cv.width, cv.height);
+      return page.render({ canvasContext: ctx, viewport: vp }).promise.then(function () { return cv; });
+    });
+  }
+
+  // --- Imagens ---
+  function imagemParaCanvas(file, alvo) {
+    var carrega = window.createImageBitmap
+      ? createImageBitmap(file, { imageOrientation: "from-image" }).catch(function () { return createImageBitmap(file); })
+      : new Promise(function (res, rej) { var im = new Image(); im.onload = function () { res(im); }; im.onerror = rej; im.src = URL.createObjectURL(file); });
+    return carrega.then(function (img) {
+      var w = img.width, h = img.height;
+      var lado = Math.max(w, h);
+      var s = alvo.min && Math.min(w, h) < alvo.min ? alvo.min / Math.min(w, h) : 1;
+      if (alvo.max && lado * s > alvo.max) s = alvo.max / lado;
+      var cv = document.createElement("canvas");
+      cv.width = Math.round(w * s); cv.height = Math.round(h * s);
+      var ctx = cv.getContext("2d");
+      ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(img, 0, 0, cv.width, cv.height);
+      return cv;
+    }, function () { throw new Error("Não consegui abrir a imagem. Use JPG ou PNG (fotos HEIC do iPhone precisam ser convertidas)."); });
+  }
+  function recorte(cv, y0, y1, maxLado) {
+    var h = Math.max(1, Math.round(y1 - y0));
+    var s = Math.min(1, maxLado / Math.max(cv.width, h));
+    var c = document.createElement("canvas");
+    c.width = Math.round(cv.width * s); c.height = Math.round(h * s);
+    var ctx = c.getContext("2d");
+    ctx.imageSmoothingQuality = "high";
+    ctx.drawImage(cv, 0, y0, cv.width, h, 0, 0, c.width, c.height);
+    return new Promise(function (res) { c.toBlob(function (b) { res(b); }, "image/jpeg", 0.9); });
+  }
+  // Metades com sobreposição: cada parte chega ao Claude com mais resolução
+  function partesParaClaude(canvases, max) {
+    var tarefas = [];
+    canvases.forEach(function (cv) {
+      if (cv.height > cv.width * 1.15) {
+        var meio = cv.height / 2, sob = cv.height * 0.05;
+        tarefas.push([cv, 0, meio + sob], [cv, meio - sob, cv.height]);
+      } else tarefas.push([cv, 0, cv.height]);
+    });
+    tarefas = tarefas.slice(0, max);
+    return Promise.all(tarefas.map(function (t) { return recorte(t[0], t[1], t[2], 2000); }));
+  }
+
+  // --- OCR (fora do claude.ai) ---
+  function ocrCanvases(canvases) {
+    return carregaScript(LIBS.ocr).then(function () {
+      etapa("Preparando o reconhecimento de texto. Na primeira vez, baixa cerca de 4 MB…", false);
+      return window.Tesseract.createWorker("por", 1, {
+        logger: function (m) {
+          if (m && m.status === "recognizing text" && typeof m.progress === "number") etapa("Reconhecendo o texto da imagem… " + Math.round(m.progress * 100) + "%", false);
+        }
+      });
+    }).then(function (worker) {
+      function passada(psm) {
+        var toks = [], i = 0;
+        function prox() {
+          pararSeCancelado();
+          if (i >= canvases.length) return Promise.resolve(toks);
+          var cv = canvases[i++], pg = i;
+          return worker.recognize(cv, {}, { blocks: true }).then(function (res) {
+            toks = toks.concat(BillReader.tokensDoOcr(res.data, pg));
+            return prox();
+          });
+        }
+        return worker.setParameters({ tessedit_pageseg_mode: psm, preserve_interword_spaces: "1" }).then(prox);
+      }
+      var r1;
+      return passada("3").then(function (toks) {
+        r1 = BillReader.parse(toks, { metodo: "ocr" });
+        if (completo(r1)) return r1;
+        etapa("Segunda leitura da imagem, procurando os meses que faltaram…", false);
+        return passada("11").then(function (t2) { return melhorLeitura(r1, BillReader.parse(t2, { metodo: "ocr" })); });
+      }).then(function (r) { worker.terminate(); return r; }, function (e) { worker.terminate(); throw e; });
+    });
+  }
+
+  // --- Claude (no claude.ai) ---
+  var PROMPT_CLAUDE = [
+    "As imagens anexas são partes de uma fatura de energia elétrica (conta de luz) brasileira, na ordem em que aparecem na página (parte de cima, parte de baixo; página 1, página 2).",
+    "Leia a fatura e responda SOMENTE com um objeto JSON neste formato:",
+    '{"distribuidora": "nome da distribuidora", "titular": "nome do titular", "documento": "CPF ou CNPJ como aparece", "uc": "número da unidade consumidora ou instalação", "endereco": "endereço da unidade", "municipio_uf": "Cidade/UF", "grupo": "B", "subgrupo": "B1", "classe": "residencial", "classe_texto": "texto da classe como aparece na fatura", "referencia": "AAAA-MM", "historico": [{"mes": "AAAA-MM", "kwh": 123}], "observacoes": null}',
+    "Regras:",
+    "- historico: o consumo de energia ativa faturado em kWh de cada mês do histórico de consumo da fatura (tabela ou gráfico), incluindo o mês de referência da própria fatura. Use os números exatamente como estão escritos. Se um mês não tiver número legível, deixe esse mês de fora; nunca estime pela altura de barras.",
+    "- Não use energia injetada, compensada, créditos nem valores em reais. Se a fatura for do Grupo A ou tiver postos horários, some ponta, intermediário e fora de ponta de cada mês.",
+    "- classe: um destes valores: residencial, comercial, industrial, rural, servico_publico, poder_publico, iluminacao_publica, consumo_proprio. Use null se a classe não estiver escrita. Comércio, serviços e outras atividades é comercial.",
+    "- uc: o número da unidade consumidora ou da instalação. Não use o número do cliente, da conta, da nota fiscal nem o código de barras.",
+    "- referencia: o mês e ano a que a fatura se refere.",
+    "- Use null em qualquer campo que não esteja na fatura. Não invente dados.",
+    "- observacoes: só se houver algo que afete o consumo médio (por exemplo, meses sem leitura ou unidade com geração própria). Senão, null."
+  ].join("\n");
+
+  function lerComClaude(canvases, textoPdf) {
+    return partesParaClaude(canvases, leitorClaude.max).then(function (imgs) {
+      pararSeCancelado();
+      etapa("O Claude está lendo a fatura. Isso pode levar até um minuto…", true);
+      var prompt = PROMPT_CLAUDE;
+      if (textoPdf && textoPdf.trim().length > 40) prompt += "\n\nTexto extraído do PDF (pode ajudar, mas confira com as imagens):\n" + textoPdf.slice(0, 12000);
+      return leitorClaude.sample.json(prompt, { images: imgs, modelTier: "default", signal: leituraCtl.signal });
+    }).then(function (obj) { return BillReader.deJson(obj); });
+  }
+
+  // --- Um arquivo ---
+  function ehPdf(f) { return /pdf/i.test(f.type) || /\.pdf$/i.test(f.name); }
+  function ehImagem(f) { return /^image\//i.test(f.type) || /\.(jpe?g|png|webp)$/i.test(f.name); }
+
+  function lerArquivo(file) {
+    if (ehPdf(file)) {
+      var pdf, local = null, plano = "";
+      etapa("Abrindo o PDF…", false);
+      return carregaPdfJs().then(function () { return abrePdf(file); }).then(function (doc) {
+        pdf = doc;
+        etapa("Lendo o texto do PDF…", false);
+        return textoDoPdf(pdf);
+      }).then(function (tx) {
+        pararSeCancelado();
+        plano = tx.plano;
+        var chars = tx.toks.reduce(function (a, t) { return a + t.t.length; }, 0);
+        if (chars > 150) local = BillReader.parse(tx.toks, { paginas: tx.paginas, metodo: "texto" });
+        if (completo(local)) return local;
+        var paginas = Math.min(pdf.numPages, 2);
+        if (leitorClaude) {
+          etapa("Preparando as páginas para o Claude…", true);
+          return Promise.all(Array.from({ length: paginas }, function (_, i) { return renderPagina(pdf, i + 1, 1700); }))
+            .then(function (cvs) { return lerComClaude(cvs, plano); })
+            .then(function (rc) { return melhorLeitura(rc, local); });
+        }
+        if (ocrPossivel) {
+          etapa("O PDF não tem o histórico em texto. Preparando a leitura da imagem…", false);
+          return Promise.all(Array.from({ length: paginas }, function (_, i) { return renderPagina(pdf, i + 1, 2480); }))
+            .then(ocrCanvases)
+            .then(function (ro) { return melhorLeitura(local, ro); });
+        }
+        return local || BillReader.deJson({});
+      });
+    }
+    if (ehImagem(file)) {
+      if (leitorClaude) {
+        etapa("Preparando a imagem…", true);
+        return imagemParaCanvas(file, { max: 4000 }).then(function (cv) { return lerComClaude([cv], ""); });
+      }
+      if (ocrPossivel) {
+        etapa("Preparando a imagem…", false);
+        return imagemParaCanvas(file, { min: 2400, max: 4200 }).then(function (cv) { return ocrCanvases([cv]); });
+      }
+      return Promise.reject(new Error("Fotos da fatura são lidas pelo Claude, que não está disponível nesta visualização. Envie o PDF da fatura ou preencha o mês a mês."));
+    }
+    return Promise.reject(new Error("O arquivo " + file.name + " não é PDF nem imagem. Envie a fatura em PDF, JPG ou PNG."));
+  }
+
+  // --- Vários arquivos ---
+  function lerArquivos(lista) {
+    var files = Array.prototype.slice.call(lista || []).slice(0, 4);
+    if (!files.length) return;
+    leituraCtl = new AbortController();
+    $("leitor").classList.add("ocupado");
+    $("leitor-res").hidden = true;
+    var resultados = [], i = 0;
+    function prox() {
+      if (i >= files.length) return Promise.resolve();
+      var f = files[i++];
+      return lerArquivo(f).then(function (r) { r.arquivo = f.name; resultados.push(r); return prox(); });
+    }
+    prox().then(function () {
+      var r = BillReader.juntar(resultados);
+      r.arquivos = files.map(function (f) { return f.name; });
+      aplicarLeitura(r);
+      mostrarLeitura(r);
+    }).catch(function (e) {
+      mostrarErro(e);
+    }).then(function () {
+      $("leitor").classList.remove("ocupado");
+      $("leitor-prog").hidden = true;
+      $("fatura").value = "";
+      leituraCtl = null;
+    });
+  }
+
+  function mostrarErro(e) {
+    var code = e && e.code;
+    if (code === "cancelled") { $("leitor-res").hidden = true; return; }
+    var txt = {
+      not_granted: "A leitura pelo Claude não foi permitida nesta página. Envie o PDF da fatura (lido no navegador) ou preencha o mês a mês.",
+      sampling_disabled: "O Claude não está disponível nesta conta. Envie o PDF da fatura ou preencha o mês a mês.",
+      rate_limited: "O limite de uso do Claude foi atingido. Tente de novo mais tarde ou preencha o mês a mês.",
+      image_rejected: "A imagem não pôde ser lida. Tente outra foto, em JPG ou PNG.",
+      invalid_json: "O Claude não devolveu os dados no formato esperado. Tente enviar a fatura de novo.",
+      images_unavailable: "Esta visualização não permite enviar imagens ao Claude. Envie o PDF da fatura ou preencha o mês a mês."
+    }[code] || (e && e.message && !/^[a-z_]+$/.test(e.message) ? e.message : "Não foi possível ler a fatura. Tente de novo ou preencha o mês a mês.");
+    $("leitor-res").hidden = false;
+    $("leitor-res").innerHTML = chip("warn", esc(txt));
+  }
+
+  function setSeVazio(id, v) { if (v && !String($(id).value || "").trim()) $(id).value = v; }
+
+  function aplicarLeitura(r) {
+    var hist = r.historico || [];
+    var temMeses = hist.some(function (h) { return h.kwh != null; });
+    if (temMeses) {
+      $("modo-meses").checked = true;
+      modoAnterior = "meses";
+      $("ultimo").value = hist[hist.length - 1].iso;
+      atualizaLabels();
+      hist.forEach(function (h, i) {
+        var el = $("m" + i);
+        el.value = h.kwh == null ? "" : fmtAuto(h.kwh);
+        el.classList.toggle("auto", h.kwh != null);
+        el.classList.toggle("falta", h.kwh == null);
+      });
+    }
+    if (r.classe && CLASSE_RADIO[r.classe.id]) $(CLASSE_RADIO[r.classe.id]).checked = true;
+    setSeVazio("r-dist", r.distribuidora); setSeVazio("r-uc", r.uc); setSeVazio("r-titular", r.titular);
+    setSeVazio("r-doc", r.documento); setSeVazio("r-end", r.endereco); setSeVazio("r-cidade", r.municipio);
+    fonteFatura = temMeses ? {
+      arquivos: r.arquivos || [], metodo: r.metodo,
+      referencia: r.referencia ? r.referencia.rotulo : (hist.length ? hist[hist.length - 1].rotulo : ""),
+      classeTrecho: r.classe && CLASSE_RADIO[r.classe.id] ? r.classe.trecho : ""
+    } : null;
+    saiuDoExemplo();
+    render();
+  }
+
+  function mostrarLeitura(r) {
+    var hist = r.historico || [];
+    var lidos = hist.filter(function (h) { return h.kwh != null; });
+    var max = Math.max.apply(null, lidos.map(function (h) { return h.kwh; }).concat([1]));
+    var metodos = String(r.metodo || "").split(" + ").map(function (m) { return METODO_NOME[m] || m; }).filter(Boolean).join(" + ");
+    var item = function (rot, val, extra, nao) {
+      return '<li' + (nao ? ' class="nao"' : '') + '><span>' + rot + '</span><b>' + esc(val) + '</b>' + (extra ? '<small>' + esc(extra) + '</small>' : '') + '</li>';
+    };
+    var html = '<div class="res-head"><div><b>Fatura lida</b><span class="metodo">' + esc(metodos) + '</span>' +
+      '<span class="arq">' + esc((r.arquivos || []).join(", ")) + '</span></div>' +
+      '<button class="btn" type="button" id="leitor-outra">Ler outra fatura</button></div>';
+    html += '<ul class="res-dados">';
+    html += r.classe ? item("Classe", CLASSE_NOME[r.classe.id] || r.classe.id, "“" + r.classe.trecho + "”") : item("Classe", "Não identificada, selecione abaixo", "", true);
+    html += lidos.length ? item("Meses lidos", lidos.length + " de 12", hist[0].rotulo + " a " + hist[hist.length - 1].rotulo, lidos.length < 12)
+      : item("Meses lidos", "Nenhum", "", true);
+    html += item("Consumo médio (C)", r.media != null ? fmt(r.media, 2) + " kWh/mês" : "Complete os meses que faltam", "", r.media == null);
+    html += r.distribuidora ? item("Distribuidora", r.distribuidora) : "";
+    html += r.uc ? item("Unidade consumidora", r.uc) : "";
+    html += r.titular ? item("Titular", r.titular) : "";
+    html += '</ul>';
+    if (hist.length) {
+      html += '<div class="barras" aria-label="Consumo lido por mês">';
+      hist.forEach(function (h, i) {
+        var falta = h.kwh == null;
+        var alt = falta ? 40 : Math.max(2, Math.round(h.kwh / max * 100));
+        html += '<div class="barra' + (falta ? " falta" : "") + (i === hist.length - 1 ? " ultimo" : "") + '" title="' + esc(h.rotulo + ": " + (falta ? "não lido" : fmtAuto(h.kwh) + " kWh")) + '">' +
+          '<span class="v">' + (falta ? "?" : fmtAuto(h.kwh)) + '</span><span class="col" style="height:' + (falta ? "" : alt + "%") + '"></span>' +
+          '<span class="m">' + esc(h.rotulo.slice(0, 3)) + '</span></div>';
+      });
+      html += '</div>';
+    }
+    html += '<div class="res-avisos">' + (r.avisos || []).map(function (a) { return chip("warn", esc(a)); }).join("") + '</div>';
+    html += '<p class="hint">' + (lidos.length ? "Os valores foram para o <b>Mês a mês</b> e os dados da unidade para os <b>Dados do relatório</b>. Confira com a fatura antes de gerar o relatório." : "Preencha o consumo manualmente abaixo.") + '</p>';
+    $("leitor-res").innerHTML = html;
+    $("leitor-res").hidden = false;
+    $("leitor-outra").addEventListener("click", function () { $("fatura").click(); });
+  }
+
+  $("fatura").addEventListener("change", function () { lerArquivos(this.files); });
+  $("leitor-parar").addEventListener("click", function () { if (leituraCtl) leituraCtl.abort(); });
+  $("drop").addEventListener("keydown", function (e) {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); $("fatura").click(); }
+  });
+  ["dragenter", "dragover"].forEach(function (ev) {
+    $("drop").addEventListener(ev, function (e) { e.preventDefault(); $("drop").classList.add("over"); });
+  });
+  ["dragleave", "drop"].forEach(function (ev) {
+    $("drop").addEventListener(ev, function (e) { e.preventDefault(); $("drop").classList.remove("over"); });
+  });
+  $("drop").addEventListener("drop", function (e) {
+    if ($("leitor").classList.contains("ocupado")) return;
+    if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files.length) lerArquivos(e.dataTransfer.files);
+  });
+  // Evita que soltar o arquivo fora da área abra a fatura no navegador
+  window.addEventListener("dragover", function (e) { e.preventDefault(); });
+  window.addEventListener("drop", function (e) { e.preventDefault(); });
 
   render();
 })();
